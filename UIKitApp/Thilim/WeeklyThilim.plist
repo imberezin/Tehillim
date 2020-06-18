@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Start</key>
+		<string>1</string>
+		<key>End</key>
+		<string>29</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>30</string>
+		<key>End</key>
+		<string>50</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>51</string>
+		<key>End</key>
+		<string>72</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>73</string>
+		<key>End</key>
+		<string>89</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>90</string>
+		<key>End</key>
+		<string>106</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>107</string>
+		<key>End</key>
+		<string>119</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>120</string>
+		<key>End</key>
+		<string>150</string>
+	</dict>
+</array>
+</plist>

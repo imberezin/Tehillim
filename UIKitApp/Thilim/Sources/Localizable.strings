@@ -1,0 +1,18 @@
+/* 
+  Heb.strings
+  Thilim
+
+  Created by Israel Berezin on 01/05/2017.
+  Copyright © 2017 Israel Berezin. All rights reserved.
+*/
+//    var prayerTypes : NSArray = ["Single","Monthly","Weekly","Book","Personal","Edit Personal", "About"]
+
+"Single" = "פרק בודד";
+"Monthly" = "יום בחודש";
+"Weekly" = "יום בשבוע";
+"Book" = "ספר";
+"Personal" ="פרקים אישיים";
+"Edit Personal" = "ערוך פרקים אישיים";
+"About" ="אודות";
+"Close" = "סגור";
+"Elul" = "ג פרקים לחודש אלול";

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Start</key>
+		<string>-1</string>
+		<key>End</key>
+		<string>אמא</string>
+		<key>birthday</key>
+		<string>11-30-1980</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>-1</string>
+		<key>End</key>
+		<string>אבא</string>
+		<key>birthday</key>
+		<string>08-26-1980</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>-1</string>
+		<key>End</key>
+		<string>מנחם דב</string>
+		<key>birthday</key>
+		<string>10-19-2002</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>-1</string>
+		<key>End</key>
+		<string>אוריה</string>
+		<key>birthday</key>
+		<string>01-21-2006</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>-1</string>
+		<key>End</key>
+		<string>נעמה חיה</string>
+		<key>birthday</key>
+		<string>03-31-2008</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>-1</string>
+		<key>End</key>
+		<string>מוסיא איילה</string>
+		<key>birthday</key>
+		<string>05-18-2013</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>-1</string>
+		<key>End</key>
+		<string>רבי</string>
+		<key>birthday</key>
+		<string>04-18-1902</string>
+	</dict>
+	<dict>
+		<key>Start</key>
+		<string>91</string>
+		<key>End</key>
+		<string>יושב בסתר</string>
+		<key>birthday</key>
+		<string>05-03-2017</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="ThilimToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HML-Yp-ah2">
+                                <rect key="frame" x="10" y="10" width="300" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="60" id="cdA-H0-BmF" customClass="MainTableViewCell" customModule="ThilimToday" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="300" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cdA-H0-BmF" id="DXo-dr-6re">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_frame_16_9" translatesAutoresizingMaskIntoConstraints="NO" id="8L8-1T-uUX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="59.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb9-zO-GZT">
+                                                    <rect key="frame" x="8" y="9" width="284" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="8L8-1T-uUX" secondAttribute="bottom" id="008-bB-uOe"/>
+                                                <constraint firstItem="mb9-zO-GZT" firstAttribute="trailing" secondItem="DXo-dr-6re" secondAttribute="trailingMargin" id="34I-tt-ep9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mb9-zO-GZT" secondAttribute="bottom" constant="1" id="GeI-2K-QHV"/>
+                                                <constraint firstItem="8L8-1T-uUX" firstAttribute="top" secondItem="DXo-dr-6re" secondAttribute="top" id="LAM-oS-XQO"/>
+                                                <constraint firstItem="mb9-zO-GZT" firstAttribute="top" secondItem="DXo-dr-6re" secondAttribute="topMargin" constant="1" id="TeQ-I7-iHS"/>
+                                                <constraint firstAttribute="trailing" secondItem="8L8-1T-uUX" secondAttribute="trailing" id="lZ5-pM-mRN"/>
+                                                <constraint firstItem="8L8-1T-uUX" firstAttribute="leading" secondItem="DXo-dr-6re" secondAttribute="leading" id="m6n-fD-rSY"/>
+                                                <constraint firstItem="mb9-zO-GZT" firstAttribute="leading" secondItem="DXo-dr-6re" secondAttribute="leadingMargin" id="mni-sa-d8C"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellTitle" destination="mb9-zO-GZT" id="MlL-6y-xVn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="XRA-zK-CWF"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="9Zp-sd-lem"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="HML-Yp-ah2" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="1c4-Nz-l5k"/>
+                            <constraint firstItem="HML-Yp-ah2" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="AfO-q3-IOn"/>
+                            <constraint firstAttribute="trailing" secondItem="HML-Yp-ah2" secondAttribute="trailing" constant="10" id="Rsb-g5-ZSN"/>
+                            <constraint firstItem="HML-Yp-ah2" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="10" id="pHp-Jo-97L"/>
+                            <constraint firstItem="HML-Yp-ah2" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="10" id="sTT-ks-5rq"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="mainTableVIew" destination="HML-Yp-ah2" id="f9a-SE-eUQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.600000000000001" y="35.082458770614693"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home_frame_16_9" width="320" height="188"/>
+    </resources>
+</document>
