@@ -165,7 +165,7 @@ struct BottomBar : View {
                 
             }) {
                 
-                Image("menu")
+                Image("info")
                 
             }.foregroundColor(self.selected == 3 ? .black : .gray)
         }

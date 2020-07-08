@@ -208,6 +208,7 @@
 		B7CA456F24AC653B00D3AAEC = {
 			isa = PBXGroup;
 			children = (
+				B7A0F80924B487DD008A1FFD /* Localizable.strings */,
 				B7CA457424AC653B00D3AAEC /* Shared */,
 				B7CA457E24AC653C00D3AAEC /* iOS */,
 				B7CA458524AC653C00D3AAEC /* macOS */,
@@ -293,7 +294,6 @@
 		B7CA45BE24AC746700D3AAEC /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B7A0F80924B487DD008A1FFD /* Localizable.strings */,
 				B7CA45D324AC777800D3AAEC /* WeeklyThilim.json */,
 				B7CA45CE24AC772600D3AAEC /* BoooksThilim.json */,
 				B7CA45C924AC771D00D3AAEC /* AlulThilim.json */,
