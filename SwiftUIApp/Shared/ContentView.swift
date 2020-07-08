@@ -29,7 +29,7 @@ struct ContentView: View {
                 case 2:
                     TodayView().edgesIgnoringSafeArea(.bottom)
                 case 3:
-                    Color.blue.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    AboutUsView().edgesIgnoringSafeArea(.bottom)
                 default:
                     MyChaptersListView().edgesIgnoringSafeArea(.bottom)
                 }

@@ -60,6 +60,10 @@
 		B7A0F81124B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80F24B4F22F008A1FFD /* TodayLearnsVM.swift */; };
 		B7A0F81224B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80F24B4F22F008A1FFD /* TodayLearnsVM.swift */; };
 		B7A0F81324B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80F24B4F22F008A1FFD /* TodayLearnsVM.swift */; };
+		B7A0F81524B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
+		B7A0F81624B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
+		B7A0F81724B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
+		B7A0F81824B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
 		B7CA459124AC653C00D3AAEC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA459024AC653C00D3AAEC /* Tests_iOS.swift */; };
 		B7CA459C24AC653C00D3AAEC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA459B24AC653C00D3AAEC /* Tests_macOS.swift */; };
 		B7CA459E24AC653C00D3AAEC /* Tehilim2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA457524AC653B00D3AAEC /* Tehilim2_0App.swift */; };
@@ -146,6 +150,7 @@
 		B7A0F80824B487DD008A1FFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B7A0F80A24B4967A008A1FFD /* TodayTimesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTimesVM.swift; sourceTree = "<group>"; };
 		B7A0F80F24B4F22F008A1FFD /* TodayLearnsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLearnsVM.swift; sourceTree = "<group>"; };
+		B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		B7CA457524AC653B00D3AAEC /* Tehilim2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tehilim2_0App.swift; sourceTree = "<group>"; };
 		B7CA457624AC653B00D3AAEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B7CA457724AC653C00D3AAEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -310,6 +315,7 @@
 				B7CA45EA24AC95A200D3AAEC /* TheilimView.swift */,
 				B729FA4E24ACB20F00E23091 /* SearchView.swift */,
 				B78AA31324B4612C0023044C /* TodayView.swift */,
+				B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */,
 				B729FA6224ADBEAE00E23091 /* MyChaptersView.swift */,
 				B729FA6724ADC5B600E23091 /* AddChapterToMyChaptersView.swift */,
 				B729FA6C24ADD97C00E23091 /* MyChaptersListView.swift */,
@@ -540,6 +546,7 @@
 				B729FA6D24ADD97C00E23091 /* MyChaptersListView.swift in Sources */,
 				B7CA459E24AC653C00D3AAEC /* Tehilim2_0App.swift in Sources */,
 				B7CA45DB24AC7C5A00D3AAEC /* Home.swift in Sources */,
+				B7A0F81524B5F95E008A1FFD /* AboutUsView.swift in Sources */,
 				B78AA30E24B45E100023044C /* TodayTimes.swift in Sources */,
 				B7CA45C024AC747F00D3AAEC /* ChapterDivisionElement.swift in Sources */,
 				B729FA5424ACB25300E23091 /* SearchVM.swift in Sources */,
@@ -570,6 +577,7 @@
 				B7CA459F24AC653C00D3AAEC /* Tehilim2_0App.swift in Sources */,
 				B7CA45DC24AC7C5A00D3AAEC /* Home.swift in Sources */,
 				B78AA30F24B45E100023044C /* TodayTimes.swift in Sources */,
+				B7A0F81624B5F95E008A1FFD /* AboutUsView.swift in Sources */,
 				B7CA45C124AC747F00D3AAEC /* ChapterDivisionElement.swift in Sources */,
 				B729FA5524ACB25300E23091 /* SearchVM.swift in Sources */,
 				B7CA45F124AC95C000D3AAEC /* TheilimMV.swift in Sources */,
@@ -593,6 +601,7 @@
 				B729FA6F24ADD97C00E23091 /* MyChaptersListView.swift in Sources */,
 				B7CA45ED24AC95A200D3AAEC /* TheilimView.swift in Sources */,
 				B729FA5624ACB25300E23091 /* SearchVM.swift in Sources */,
+				B7A0F81724B5F95E008A1FFD /* AboutUsView.swift in Sources */,
 				B729FA6A24ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */,
 				B78AA30B24B452E60023044C /* TodayVM.swift in Sources */,
 				B7A0F81224B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */,
@@ -620,6 +629,7 @@
 				B729FA7024ADD97C00E23091 /* MyChaptersListView.swift in Sources */,
 				B7CA45EE24AC95A200D3AAEC /* TheilimView.swift in Sources */,
 				B729FA5724ACB25300E23091 /* SearchVM.swift in Sources */,
+				B7A0F81824B5F95E008A1FFD /* AboutUsView.swift in Sources */,
 				B729FA6B24ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */,
 				B78AA30C24B452E60023044C /* TodayVM.swift in Sources */,
 				B7A0F81324B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */,
