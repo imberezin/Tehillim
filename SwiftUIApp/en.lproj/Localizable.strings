@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Tehilim2.0
+
+  Created by israel.berezin on 07/07/2020.
+  
+*/
+
+"sunrise" = "Sunrise";
+
+"talisMa" = "Talis Start Time (Ma)";
+
+"sofZmanTefilaGra" = "Sof Zman Tefila (Gra)";
+
+"tzeis595_Degrees" = "Zat Hackochavim";
+
+"chatzos" = "Chatzos Haiom";
+
+"minchaKetanaGra" = "Mincha Ketana (Gra)";
+
+"plagMinchaMa" = "Plag HaMincha (Ma)";
+
+"sofZmanShemaGra" = "Sof Zman Shema (Gra)";
+
+"sofZmanTefilaMa" = "Sof Zman Tefila (Ma)";
+
+"tzeis42_Minutes" = "Tzeis 42 Minutes";
+
+"tzeis72_Minutes" = "Tzeis 72 Minutes";
+
+"tzeis850_Degrees" = "Zat Hackochavim (Rabinu Tam)";
+
+"sunset" = "Sunset";
+
+"sofZmanShemaMa" = "Sof Zman Shema (Ma)";
+
+"alosMa" = "Alos (Ma)";
+
+"minchaGedolaMa" = "Mincha Gedola (Ma)";
+
+
