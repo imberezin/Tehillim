@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
         formatter.timeStyle = DateFormatter.Style.short
         
-        formatter.calendar = hebrew as Calendar!
+        formatter.calendar = hebrew as Calendar?
         
         formatter.locale = Locale(identifier: "en")
         let str:String = formatter.string(from: date as Date)
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         return (str)
     }
         
-    func insertToDeepLink(_ notification: Notification){
+    @objc func insertToDeepLink(_ notification: Notification){
         if let deepLinkingPage = notification.userInfo?["DeepLinkingPage"] as? String{
             self.pikerview.cancelPicker(sender: UIBarButtonItem.init())
 

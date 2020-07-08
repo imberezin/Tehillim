@@ -171,7 +171,7 @@ class PrayViewController: UIViewController {
         
         formatter.timeStyle = DateFormatter.Style.short
         
-        formatter.calendar = hebrew as Calendar!
+        formatter.calendar = hebrew as Calendar?
         
         formatter.locale = Locale(identifier: "en")
         let str:String = formatter.string(from: date as Date)
@@ -180,7 +180,7 @@ class PrayViewController: UIViewController {
         return (str)
     }
     
-    func pinchRecognized(pinch: UIPinchGestureRecognizer){
+    @objc func pinchRecognized(pinch: UIPinchGestureRecognizer){
         print("Pinch scale: \(pinch.scale)")
         var scale:CGFloat = pinch.scale
         if (scale < 1){ scale = 1 }

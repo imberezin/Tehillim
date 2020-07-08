@@ -68,10 +68,10 @@ class PikerView: UIView {
             toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
-            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(cancelPicker))
-            let spaceButton2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(donePicker))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPicker))
+            let spaceButton2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
 
             let textFiled = UITextField()
             textFiled.frame.size = CGSize(width: 100, height: 44)
@@ -98,13 +98,13 @@ class PikerView: UIView {
         self.isHidden = false
     }
     
-    public func donePicker (sender:UIBarButtonItem)
+    @objc public func donePicker (sender:UIBarButtonItem)
     {
         delegate?.didSelectRow(row: self.selectedRow, pikerMode: self.pagePikerMode!)
         self.isHidden = true
     }
     
-    public func cancelPicker (sender:UIBarButtonItem)
+    @objc public func cancelPicker (sender:UIBarButtonItem)
     {
         self.isHidden = true;
 

@@ -147,7 +147,7 @@ extension EditPorsanlChaptersViewController: UITableViewDataSource, UITableViewD
         return 44
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Deleted")
             self.allPordanlThilimArray.removeObject(at: indexPath.row)

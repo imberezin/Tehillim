@@ -62,7 +62,7 @@ class TosastBarMenager: NSObject {
         }
     }
     
-    func adjustmentBestSongBpmHeartRate(_ timer: Timer) {
+    @objc func adjustmentBestSongBpmHeartRate(_ timer: Timer) {
         self.animateOutView()
     }
     

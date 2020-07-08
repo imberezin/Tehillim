@@ -29,11 +29,11 @@ class SingleCheapterViewController: UIViewController {
         self.mainTableView.dataSource = self
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
 
         let twoFingerPinch:UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinchRecognized))
@@ -50,23 +50,23 @@ class SingleCheapterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
                 print("Swiped right")
                 self.previousChapter(NSNull.self)
                 break
-            case UISwipeGestureRecognizerDirection.down:
+            case UISwipeGestureRecognizer.Direction.down:
                 print("Swiped down")
                 break
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                 print("Swiped left")
                 self.nextChapter(NSNull.self)
                 break
-            case UISwipeGestureRecognizerDirection.up:
+            case UISwipeGestureRecognizer.Direction.up:
                 print("Swiped up")
                 break
             default:
@@ -76,7 +76,7 @@ class SingleCheapterViewController: UIViewController {
     }
 
     
-    func pinchRecognized(pinch: UIPinchGestureRecognizer){
+    @objc func pinchRecognized(pinch: UIPinchGestureRecognizer){
         print("Pinch scale: \(pinch.scale)")
         var scale:CGFloat = pinch.scale
         if (scale < 1){ scale = 1 }

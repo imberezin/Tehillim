@@ -104,7 +104,7 @@ struct AllThilimDivision
         // convert string to Date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy" //Your New Date format as per requirement change it own
-        if (birthday.characters.count == 0){
+        if (birthday.count == 0){
             birthday = "01-01-2000"
         }
         let date: Date = dateFormatter.date(from: birthday)!

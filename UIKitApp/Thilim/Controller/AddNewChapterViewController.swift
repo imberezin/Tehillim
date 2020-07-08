@@ -38,7 +38,7 @@ class AddNewChapterViewController: UIViewController,UITextFieldDelegate {
         self.chapterTextFiled.delegate = self;
         let hebrew = NSCalendar(identifier: NSCalendar.Identifier.hebrew)
         self.datePicker.maximumDate = Date()
-        self.datePicker.calendar = hebrew as Calendar!
+        self.datePicker.calendar = hebrew as Calendar?
         if Plist(name: "personThilim") != nil{
             let plist = Plist(name: "personThilim")
             self.allPordanlThilimArray = (plist?.getValuesInPlistFile())!
@@ -81,7 +81,7 @@ class AddNewChapterViewController: UIViewController,UITextFieldDelegate {
         if (self.btnHebBirthday.isSelected || self.btnEnBirthday.isSelected){
             dic["Start"] =  "-1"
             dic["End"] =  self.nameTextFiled.text;
-            if (self.selectedUserDate.characters.count > 0){
+            if (self.selectedUserDate.count > 0){
                 dic["birthday"] = self.selectedUserDate
             }
             else{
@@ -93,7 +93,7 @@ class AddNewChapterViewController: UIViewController,UITextFieldDelegate {
         else{
             dic["Start"] =  self.chapterTextFiled.text;
             dic["End"] =  self.nameTextFiled.text;
-            if (self.selectedUserDate.characters.count > 0){
+            if (self.selectedUserDate.count > 0){
                 dic["birthday"] = self.selectedUserDate
             }
             else{
@@ -141,7 +141,7 @@ class AddNewChapterViewController: UIViewController,UITextFieldDelegate {
         self.btnHebBirthday.isSelected = false
         self.btnEnBirthday.isSelected = true
         let gregorian = NSCalendar(identifier: NSCalendar.Identifier.gregorian)
-        self.datePicker.calendar = gregorian as Calendar!
+        self.datePicker.calendar = gregorian as Calendar?
         self.showDatePiker(animate: true)
         self.chapterTextFiled.text = ""
         self.view.endEditing(true)
@@ -155,7 +155,7 @@ class AddNewChapterViewController: UIViewController,UITextFieldDelegate {
         self.btnHebBirthday.isSelected = true
         self.btnEnBirthday.isSelected = false
         let hebrew = NSCalendar(identifier: NSCalendar.Identifier.hebrew)
-        self.datePicker.calendar = hebrew as Calendar!
+        self.datePicker.calendar = hebrew as Calendar?
         self.showDatePiker(animate: true)
         self.chapterTextFiled.text = ""
         self.view.endEditing(true)
@@ -192,7 +192,7 @@ class AddNewChapterViewController: UIViewController,UITextFieldDelegate {
         
         formatter.timeStyle = DateFormatter.Style.short
         
-        formatter.calendar = hebrew as Calendar!
+        formatter.calendar = hebrew as Calendar?
         
         formatter.locale = Locale(identifier: "en")
         let str:String = formatter.string(from: date as Date)
@@ -213,7 +213,7 @@ class AddNewChapterViewController: UIViewController,UITextFieldDelegate {
         
         formatter.timeStyle = DateFormatter.Style.short
         
-        formatter.calendar = gregorian as Calendar!
+        formatter.calendar = gregorian as Calendar?
         
         formatter.locale = Locale(identifier: "en")
         

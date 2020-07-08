@@ -49,7 +49,7 @@ class AboutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func rightButtonAction(){
+    @objc func rightButtonAction(){
         self.dismiss(animated: true, completion: nil)
     }
     
