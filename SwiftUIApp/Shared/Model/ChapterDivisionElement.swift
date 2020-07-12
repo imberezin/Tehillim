@@ -11,8 +11,23 @@
 
 import Foundation
 
+
+
+
 // MARK: - ChapterDivisionElement
-class ChapterDivisionElement: Codable {
+class ChapterDivisionElement: NSObject, Codable, NSCoding {
+    
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(self.start, forKey: "start")
+        coder.encode(self.end, forKey: "end")
+    }
+    
+    required init?(coder: NSCoder) {
+        self.start = coder.decodeObject(forKey: "start") as! String
+        self.end = coder.decodeObject(forKey: "end") as! String
+    }
+    
     var start, end: String
     
     var startAt: Int{
@@ -116,3 +131,9 @@ func newJSONEncoder() -> JSONEncoder {
     }
     return encoder
 }
+//
+//extension ChapterDivisionElement: CustomStringConvertible {
+//    override var description: String {
+//        return "start = \(String(describing: start)), end = \(String(describing: end))"
+//    }
+//}

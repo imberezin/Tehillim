@@ -7,9 +7,10 @@
 
 import SwiftUI
 import Combine
+import WidgetKit
 
 enum PrayerMode: Int {
-    case Single=0, Monthly, Weekly, Book, Personal,Spaicel,Elul
+    case Single=0, Monthly, Weekly, Book, Personal,Spaicel,Elul, Widget
 }
 
 
@@ -20,9 +21,21 @@ class TheilimMV: ObservableObject {
     
     @Published var chapterDivision: ChapterDivisionElement? = nil
     
+    @AppStorage("WidgetChaptersDivision", store: UserDefaults(suiteName: "group.es.vodafone.ONO"))
+    var widgetChaptersDivisionData: Data = Data(count: 0)
+//
+    
+    init() {
+        self.menuItem = MenuItem(name: "Widget", prayerMode: .Widget)
+    }
+    
     init(menuItem : MenuItem) {
         self.menuItem = menuItem
-        prepareThilimList()
+        
+        self.dataToWidget()
+        WidgetCenter.shared.reloadAllTimelines()
+
+        self.prepareThilimList()
     }
     
     func prepareThilimList(){
@@ -44,7 +57,9 @@ class TheilimMV: ObservableObject {
             print("Single")
         case .Spaicel:
             print("Spaicel")
-        
+        case .Widget:
+            print("Widget")
+
         }
     }
     
@@ -127,21 +142,52 @@ class TheilimMV: ObservableObject {
 
 }
 
-
-
-extension Date {
-    func dayNumberOfWeek() -> Int? {
-        return Calendar.current.dateComponents([.weekday], from: self).weekday
+extension TheilimMV {
+    
+    func hebTodayDate() -> String{
+        let hebDate : String = self.getHebrewDate(date: Date())
+        return hebDate
     }
     
-    
-        func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
-            return calendar.dateComponents(Set(components), from: self)
-        }
+    @discardableResult
+    func dataToWidget() -> [ChapterDivisionStoreElement]{
+        
+        let hebDate : String = self.getHebrewDate(date: Date())
+        print("hebDate = \(hebDate)")
+        let parts: Array = hebDate.components(separatedBy: " ")
+        let selectDay = (Int(parts[0])!) - 1 // our index start form 0 and days start from 1!
+        print("selectDay = \(selectDay)")
+        
+        let chapterDivision = self.loadJson(fileName: "MonthlyThilim")
+        let todayChapterDivision: ChapterDivisionElement = chapterDivision[selectDay]
 
-        func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
-            return calendar.component(component, from: self)
-        }
-    
+        
+        
+        let selectWeeklyDay  = (Date().dayNumberOfWeek()!)-1
+        let weeklyChapters = self.loadJson(fileName: "WeeklyThilim")
+        let weeklyChapterDivision: ChapterDivisionElement = weeklyChapters[selectWeeklyDay]
+        
+        
+        let todayChapterDivisionStoreElement = ChapterDivisionStoreElement(todayChapterDivision, storeDate: Date())
+        
+        let weeklyChapterDivisionStoreElement = ChapterDivisionStoreElement(weeklyChapterDivision, storeDate: Date())
 
+        let array = [todayChapterDivisionStoreElement, weeklyChapterDivisionStoreElement]
+        
+        guard let chaptersData = try? JSONEncoder().encode(array) else {
+            return array
+        }
+        
+        self.widgetChaptersDivisionData = chaptersData
+        
+        return array
+    }
 }
+
+
+//do {
+//            let encodedData = try NSKeyedArchiver.archivedData(withRootObject: array, requiringSecureCoding: false)
+//            self.widgetChaptersDivisionData = encodedData
+//        } catch let error as NSError {
+//            print(error)
+//        }

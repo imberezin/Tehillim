@@ -7,20 +7,9 @@
 
 import SwiftUI
 
-class MenuItem: Identifiable {
-    let id = UUID()
-    let name: String
-    let prayerMode: PrayerMode
-    
-    init(name: String, prayerMode: PrayerMode){
-        self.name = name
-        self.prayerMode = prayerMode
-    }
-    
-}
-
 
 struct Home: View {
+    
     let list: [MenuItem] = [MenuItem(name: "All", prayerMode: .Book), MenuItem(name: "Today", prayerMode: .Monthly), MenuItem(name: "Weekly", prayerMode: .Weekly), MenuItem(name: "Spaicel", prayerMode: .Spaicel),MenuItem(name: "My chaptes", prayerMode: .Personal)] //["Be it will","All","Today","Weekly","My chaptes"]
     
     let columns: [GridItem] = [
