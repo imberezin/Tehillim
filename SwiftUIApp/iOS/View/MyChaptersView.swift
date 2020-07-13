@@ -91,12 +91,12 @@ struct MyChaptersView: View {
             
             .navigationBarTitle("My chapters", displayMode: .automatic)
             .navigationBarItems(trailing: HStack {
-                Button(action: {
-                    print("edit")
-                    //                self.isEditing.toggle()
-                }){
-                    Text("Edit")
-                }
+//                Button(action: {
+//                    print("edit")
+//                    //                self.isEditing.toggle()
+//                }){
+//                    Text("Edit")
+//                }
                 Button(action: {
                     self.showAddView.toggle()
                 }){

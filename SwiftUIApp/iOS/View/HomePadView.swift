@@ -19,7 +19,7 @@ struct HomePadView: View {
     
     let myFavoriteList = MenuItem(name: "Favorite", prayerMode: .Section, isSection: true, children:[MenuItem(name: "List", prayerMode: .FavoriteList)])//,MenuItem(name: "Add / Remove", prayerMode: .FavoriteAdd)])
     
-    let timesList = MenuItem(name: "Today Times", prayerMode: .Section, isSection: true, children:[MenuItem(name: "Times", prayerMode: .TodayTimes)])//, MenuItem(name: "Learn", prayerMode: .TodayLeran)])
+    let timesList = MenuItem(name: "Today's", prayerMode: .Section, isSection: true, children:[MenuItem(name: "Today's time", prayerMode: .TodayTimes),MenuItem(name: "Daily Study", prayerMode: .TodayLeran)])//, MenuItem(name: "Learn", prayerMode: .TodayLeran)])
     
     let infolist = MenuItem(name: "Info", prayerMode: .Section, isSection: true, children:[MenuItem(name: "AboutUs", prayerMode: .AboutUs)])
     
@@ -119,8 +119,11 @@ struct HomePadView: View {
             return AnyView(MyChaptersView())
             
         case.TodayTimes:
-            return AnyView(TodayView())
-            
+            return AnyView(TodayView(theTodayType: .times))
+          
+        case.TodayLeran:
+            return AnyView(TodayView(theTodayType: .study))
+
         case.AboutUs:
             return AnyView(AboutUsView())
             

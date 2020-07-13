@@ -13,10 +13,7 @@ struct TheilimView: View {
     
     
     let columns: [GridItem] = [
-        //        GridItem(.fixed(350))
-//        GridItem(.adaptive(minimum: 350))
         GridItem(.flexible(minimum: 350, maximum: 1000))
-
     ]
     
     var body: some View {

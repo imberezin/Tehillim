@@ -23,7 +23,7 @@ struct MainPhoneView: View {
             case 1:
                 ENavigationView {SearchView()}.edgesIgnoringSafeArea(.bottom)
             case 2:
-                ENavigationView {TodayView()}.edgesIgnoringSafeArea(.bottom)
+                ENavigationView {TodayView(theTodayType: .times)}.edgesIgnoringSafeArea(.bottom)
             case 3:
                 ENavigationView {AboutUsView()}.edgesIgnoringSafeArea(.bottom)
             default:
