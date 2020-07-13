@@ -9,14 +9,6 @@ import SwiftUI
 #if !os(macOS)
 import UIKit
 #endif
-class AAA: ObservableObject
-{
-    var selectedChapter: SaveChapter? = nil{
-        didSet{
-            print(self.selectedChapter!.index)
-        }
-    }
-}
 
 struct MyChaptersListView: View {
     
@@ -41,11 +33,12 @@ struct MyChaptersListView: View {
     
     @State var showOneRecored: Bool = false
     
-    @State var animalsExpanded: Bool = true
+    @State var timePickerExpanded: Bool = true
     
     @Namespace var namespaceA
     
-    let aaa = AAA()
+    let selectedObject = SelectedChapterObject()
+    
     let columns: [GridItem] = [
         GridItem(.adaptive(minimum: 350))
     ]
@@ -57,171 +50,123 @@ struct MyChaptersListView: View {
         return formatter
     }
     
+    
     var body: some View {
         
-//        NavigationView{
+        ZStack (alignment: .top){
             
-            ZStack (alignment: .top){
+            Color("bg").edgesIgnoringSafeArea(.all)
+            
+            VStack {
                 
-                
-                Color("bg").edgesIgnoringSafeArea(.all)
-                
-                VStack {
+                List{
                     
-                    //                    ScrollView {
-                    //
-                    //                        LazyVGrid(columns: columns, spacing: 20) {
-                    //
-                    //                            ForEach(chapters, id: \.self) { chapter in
-                    //                                HStack{
-                    //                                    Text(chapter.name!)
-                    //                                    Spacer()
-                    //                                    if chapter.isCounstChapter{
-                    //                                        Image(systemName: "heart.circle").imageScale(.large).font(.largeTitle)
-                    //                                    }else{
-                    //                                        Image(systemName: "calendar.circle")
-                    //                                    }
-                    //                                }
-                    //                                .padding(.vertical, 8)
-                    //                                .padding(.horizontal, 16)
-                    //                            }
-                    //                        }.environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
-                    //                    }.environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
-                    
-                    List{
-                        ForEach(chapters, id: \.self) { chapter in
-                            ZStack {
-                                
-                                Rectangle().fill(Color.white).frame(height: 60).cornerRadius(10)
-                                
-                                HStack{
-                                    Text(chapter.name!)
-                                    Spacer()
-                                    Image(systemName: chapter.isCounstChapter ? "heart.circle" : "calendar.circle" ).imageScale(.large).font(.largeTitle)
-                                        .onTapGesture {
-                                            withAnimation(.spring()){
-                                                self.aaa.selectedChapter = chapter
-                                                
-                                                self.title = chapter.name!
-                                                if chapter.isCounstChapter == true{
-                                                    self.selectedChepter = "\(Int(chapter.number))"
-                                                }else{
-                                                    if chapter.hebrewBirthday != nil{
-                                                        if let date = self.dateFormatter.date(from: chapter.hebrewBirthday!){
-                                                            self.birthDate = date
-                                                        }
-
-                                                    }else{
-                                                        if let date = self.dateFormatter.date(from: chapter.birthday!){
-                                                            self.birthDate = date
-                                                        }
-
-                                                    }
-                                                }
-                                                self.showOneRecored.toggle()
-                                            }
-                                            
-                                        }
-                                    
-                                }.padding(.horizontal, 16)
-                                
-                            }
-                            .padding(.vertical, 8)
-                            .matchedGeometryEffect(id: "aaa_\(chapter.index)", in: namespaceA)
-                            
-                            
-                        }
-                        .onDelete { (indexSet) in
-                            print("delete \(indexSet)")
-                            let chapter = self.chapters[indexSet.first!]
-                            self.moc.delete(chapter)
-                            try! self.moc.save()
-                            
-                        }
-                        .onMove { indecies, newOffset in
-                            print("move from  \(indecies) to \(newOffset)")
-                            self.move(from: indecies, to: newOffset)
-                            try! self.moc.save()
-                        }
+                    ForEach(chapters, id: \.self) { chapter in
                         
+                        ZStack {
+                            
+                            Rectangle().fill(Color.white).frame(height: 60).cornerRadius(10)
+                            
+                            HStack{
+                                
+                                Text(chapter.name!)
+                                Spacer()
+                                Image(systemName: chapter.isCounstChapter ? "heart.circle" : "calendar.circle" )
+                                    .imageScale(.large)
+                                    .font(.largeTitle)
+                                    .onTapGesture {
+                                        self.cellImageOnTapGesture(chapter: chapter)
+                                    }
+                                
+                            }.padding(.horizontal, 16)
+                            
+                        }
+                        .padding(.vertical, 8)
+                        .matchedGeometryEffect(id: "aaa_\(chapter.index)", in: namespaceA)
+                    }
+                    .onDelete { (indexSet) in
+                        print("delete \(indexSet)")
+                        let chapter = self.chapters[indexSet.first!]
+                        self.moc.delete(chapter)
+                        try! self.moc.save()
                         
-                    }.padding(.horizontal, -8)
-                    .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
+                    }
+                    .onMove { indecies, newOffset in
+                        print("move from  \(indecies) to \(newOffset)")
+                        self.move(from: indecies, to: newOffset)
+                        try! self.moc.save()
+                    }
                     
                     
-                    
+                }.padding(.horizontal, -8)
+                .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
+            }
+            
+            .navigationBarTitle("My chapters", displayMode: .automatic)
+            .navigationBarItems(leading: HStack {
+                Button(action: {
+                    print("edit")
+                    self.isEditing.toggle()
+                }){
+                    Text("Edit")
                 }
+            },trailing:  HStack {
+                Button(action: {
+                    self.showAddView.toggle()
+                }){
+                    Text("Add")
+                }
+            })
+            
+            if self.showOneRecored {
                 
-                .navigationBarTitle("My chapters", displayMode: .automatic)
-                .navigationBarItems(leading: HStack {
-                    Button(action: {
-                        print("edit")
-                        self.isEditing.toggle()
-                    }){
-                        Text("Edit")
-                    }
+                VStack(spacing: 15){
                     
+                    HStack{
+                        Text(self.selectedObject.selectedChapter!.name!)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Image(systemName: self.selectedObject.selectedChapter!.isCounstChapter ? "heart.circle" : "calendar.circle" )
+                            .imageScale(.large)
+                            .font(.title2)
+                    }.padding(.all, 8)
+                    .background(Color(.white))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding(.horizontal, 8)
+                    .padding(.top, 16)
+                    //                        .matchedGeometryEffect(id: "aaa_\(self.aaa.selectedChapter!.index)", in: namespaceA)
                     
-                },trailing:  HStack {
-                    Button(action: {
-                        self.showAddView.toggle()
-                    }){
-                        Text("Add")
-                    }
-                })
-                
-                
-                
-                if self.showOneRecored {
-                    
-                    VStack(spacing: 15){
+                    if self.selectedObject.selectedChapter?.isCounstChapter == true {
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Update Chaprer number:")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                                .lineLimit(1)
+                            TextField("chaprer number", text: self.$selectedChepter)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                        }.padding(.top, 12)
+                        .padding([.horizontal, .bottom] , 8 )
                         
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Update Name of recored:")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                                .lineLimit(1)
+                            TextField("Title", text: self.$title)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                        }.padding(.all, 8)
                         
+                    } else {
                         HStack{
                             
-                            
-                            Text(self.aaa.selectedChapter!.name!)
-                                .font(.title)
-                                .fontWeight(.bold)
-                            Spacer()
-                            Image(systemName: self.aaa.selectedChapter!.isCounstChapter ? "heart.circle" : "calendar.circle" ).imageScale(.large).font(.title2)
-                        }.padding(.all, 8)
-                        .background(Color(.white))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding(.horizontal, 8)
-                        .padding(.top, 16)
-//                        .matchedGeometryEffect(id: "aaa_\(self.aaa.selectedChapter!.index)", in: namespaceA)
-                        
-                        if self.aaa.selectedChapter?.isCounstChapter == true {
-                            VStack(alignment: .leading, spacing: 8.0) {
-                                Text("Update Chaprer number:")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .lineLimit(1)
-                                TextField("chaprer number", text: self.$selectedChepter)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .keyboardType(.numberPad)
-                            }.padding(.top, 12)
-                            .padding([.horizontal, .bottom] , 8 )
-                            
-                            VStack(alignment: .leading, spacing: 8.0) {
-                                Text("Update Name of recored:")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .lineLimit(1)
-                                TextField("Title", text: self.$title)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                            }.padding(.all, 8)
-                            
-                        } else {
-                            HStack{
-
                             DisclosureGroup(
-                                isExpanded: $animalsExpanded,
+                                isExpanded: $timePickerExpanded,
                                 content: {
                                     HStack(spacing: 8.0){
                                         
-                                        if self.aaa.selectedChapter?.hebrewBirthday != nil {
+                                        if self.selectedObject.selectedChapter?.hebrewBirthday != nil {
                                             DatePickerUIKit(selection: $birthDate, minuteInterval: 30)
                                                 .frame(maxHeight: 50)
                                         } else {
@@ -232,7 +177,7 @@ struct MyChaptersListView: View {
                                         }
                                     }
                                 },
-                                label: { self.aaa.selectedChapter?.hebrewBirthday != nil ?
+                                label: { self.selectedObject.selectedChapter?.hebrewBirthday != nil ?
                                     Text("Update Hebrow Birthday")
                                     .fontWeight(.semibold)
                                     .lineLimit(1)
@@ -243,60 +188,80 @@ struct MyChaptersListView: View {
                                     .padding(.leading, 4)
                                 }
                             )
-                            }
-                            .padding(.leading, self.aaa.selectedChapter?.hebrewBirthday != nil ? 8 : 4)
-                            .padding([.vertical, .trailing] , 8 )
-                            
-                            
-                            VStack(alignment: .leading, spacing: 8.0) {
-                                Text("Update Name of recored:")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .lineLimit(1)
-                                TextField("Title", text: self.$title)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                            }.padding(.all, 8)
-                            
                         }
+                        .padding(.leading, self.selectedObject.selectedChapter?.hebrewBirthday != nil ? 8 : 4)
+                        .padding([.vertical, .trailing] , 8 )
                         
-                        HStack(spacing: 20) {
-                            Button(action: {
-                                withAnimation(.spring()){
-                                    self.showOneRecored.toggle()
-                                }
-                                
-                            }){
-                                Text("Close").padding(.vertical, 16).padding(.horizontal, 32)
-                            }
-                            .padding(.all, 6)
-                            .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
-                            
-                            
-                            Button(action: {
-                                withAnimation(.spring()){
-                                    self.updateSavedChapter(chapter: self.aaa.selectedChapter!)
-                                    self.showOneRecored.toggle()
-                                }
-                                
-                            }){
-                                Text("Update").padding(.vertical, 16).padding(.horizontal, 32)
-                            }
-                            .padding(.all, 6)
-                            .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
-                            
-                        }
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Update Name of recored:")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                                .lineLimit(1)
+                            TextField("Title", text: self.$title)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                        }.padding(.all, 8)
                         
-                    }.frame(height: 360).background(Color("bg"))
-                    .clipShape(RoundedRectangle(cornerRadius: 10)).padding(.horizontal, 8)
-                    .matchedGeometryEffect(id: "aaa_\(self.aaa.selectedChapter!.index)", in: namespaceA)
-
+                    }
                     
-                }
-            }.sheet(isPresented: self.$showAddView) {
-                AddChapterToMyChaptersView().environment(\.managedObjectContext, PersistentStore.shared.persistentContainer.viewContext)
+                    HStack(spacing: 20) {
+                        Button(action: {
+                            withAnimation(.spring()){
+                                self.showOneRecored.toggle()
+                            }
+                        }){
+                            Text("Close").padding(.vertical, 16).padding(.horizontal, 32)
+                        }
+                        .padding(.all, 6)
+                        .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
+                        
+                        Button(action: {
+                            withAnimation(.spring()){
+                                self.updateSavedChapter(chapter: self.selectedObject.selectedChapter!)
+                                self.showOneRecored.toggle()
+                            }
+                            
+                        }){
+                            Text("Update").padding(.vertical, 16).padding(.horizontal, 32)
+                        }
+                        .padding(.all, 6)
+                        .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
+                    }
+                    
+                }.frame(height: 360).background(Color("bg"))
+                .clipShape(RoundedRectangle(cornerRadius: 10)).padding(.horizontal, 8)
+                .matchedGeometryEffect(id: "aaa_\(self.selectedObject.selectedChapter!.index)", in: namespaceA)
             }
+        }
+        .sheet(isPresented: self.$showAddView) {
+            AddChapterToMyChaptersView().environment(\.managedObjectContext, PersistentStore.shared.persistentContainer.viewContext)
+        }
+        
+    }
+    
+    
+    func cellImageOnTapGesture(chapter: SaveChapter){
+        
+        withAnimation(.spring()){
             
-//        }
+            self.selectedObject.selectedChapter = chapter
+            
+            self.title = chapter.name!
+            
+            if chapter.isCounstChapter == true{
+                self.selectedChepter = "\(Int(chapter.number))"
+            }else{
+                if chapter.hebrewBirthday != nil{
+                    if let date = self.dateFormatter.date(from: chapter.hebrewBirthday!){
+                        self.birthDate = date
+                    }
+                }else{
+                    if let date = self.dateFormatter.date(from: chapter.birthday!){
+                        self.birthDate = date
+                    }
+                }
+            }
+            self.showOneRecored.toggle()
+        }
     }
     
     //from https://stackoverflow.com/a/62239979/1571228
@@ -319,7 +284,7 @@ struct MyChaptersListView: View {
                 Int32( reverseIndex )
         }
     }
- 
+    
     
     func updateSavedChapter(chapter: SaveChapter){
         
@@ -347,12 +312,10 @@ struct MyChaptersListView: View {
             } catch let error as NSError {
                 print("Could not save. \(error), \(error.userInfo)")
             }
-
-            
             
         }
-        
     }
+    
 }
 
 
@@ -424,3 +387,38 @@ struct HideRowSeparator_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
+
+
+class SelectedChapterObject: ObservableObject
+{
+    var selectedChapter: SaveChapter? = nil{
+        didSet{
+            print(self.selectedChapter!.index)
+        }
+    }
+}
+
+
+/*
+ 
+ //                    ScrollView {
+ //
+ //                        LazyVGrid(columns: columns, spacing: 20) {
+ //
+ //                            ForEach(chapters, id: \.self) { chapter in
+ //                                HStack{
+ //                                    Text(chapter.name!)
+ //                                    Spacer()
+ //                                    if chapter.isCounstChapter{
+ //                                        Image(systemName: "heart.circle").imageScale(.large).font(.largeTitle)
+ //                                    }else{
+ //                                        Image(systemName: "calendar.circle")
+ //                                    }
+ //                                }
+ //                                .padding(.vertical, 8)
+ //                                .padding(.horizontal, 16)
+ //                            }
+ //                        }.environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
+ //                    }.environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
+ 
+ */
