@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+#if !os(macOS)
 import UIKit
-
+#endif
 class AAA: ObservableObject
 {
     var selectedChapter: SaveChapter? = nil{
@@ -58,7 +59,7 @@ struct MyChaptersListView: View {
     
     var body: some View {
         
-        NavigationView{
+//        NavigationView{
             
             ZStack (alignment: .top){
                 
@@ -295,7 +296,7 @@ struct MyChaptersListView: View {
                 AddChapterToMyChaptersView().environment(\.managedObjectContext, PersistentStore.shared.persistentContainer.viewContext)
             }
             
-        }
+//        }
     }
     
     //from https://stackoverflow.com/a/62239979/1571228

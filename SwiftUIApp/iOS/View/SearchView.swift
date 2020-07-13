@@ -23,7 +23,7 @@ struct SearchView: View {
     
     var body: some View {
         
-        NavigationView{
+//        NavigationView{
             
             ZStack{
                 
@@ -98,7 +98,7 @@ struct SearchView: View {
 
             }
             
-        }
+//        }
     }
     
     

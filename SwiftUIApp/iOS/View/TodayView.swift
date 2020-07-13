@@ -26,25 +26,25 @@ struct TodayView: View {
         
     ]
     
-    
-    let columnsStudy: [GridItem] = [
-        //        GridItem(.fixed(350))
-//        GridItem(.fixed(120)),
-//        GridItem(.fixed(120)),
-//        GridItem(.fixed(120))
-        GridItem(.flexible(minimum: 100, maximum: 150)),
-        GridItem(.flexible(minimum: 100, maximum: 150)),
-        GridItem(.flexible(minimum: 100, maximum: 150))
-
-//        GridItem(.adaptive(minimum: 100, maximum: 150)),
-//        GridItem(.adaptive(minimum: 100, maximum: 150)),
-//        GridItem(.adaptive(minimum: 100, maximum: 150))
-
-    ]
+    let columnsStudy: [GridItem] = Array(repeating: GridItem(.flexible(minimum: 100, maximum: 150)), count: idiom == .pad ? 4 : 3)
+//    let columnsStudy: [GridItem] = [
+//        //        GridItem(.fixed(350))
+////        GridItem(.fixed(120)),
+////        GridItem(.fixed(120)),
+////        GridItem(.fixed(120))
+//        GridItem(.flexible(minimum: 100, maximum: 150)),
+//        GridItem(.flexible(minimum: 100, maximum: 150)),
+//        GridItem(.flexible(minimum: 100, maximum: 150))
+//
+////        GridItem(.adaptive(minimum: 100, maximum: 150)),
+////        GridItem(.adaptive(minimum: 100, maximum: 150)),
+////        GridItem(.adaptive(minimum: 100, maximum: 150))
+//
+//    ]
 
     var body: some View {
         
-        NavigationView{
+//        NavigationView{
             
             ZStack {
                 
@@ -88,31 +88,33 @@ struct TodayView: View {
                         }.padding(.top, 16)
                     }else{
                             
-                        LazyVGrid(columns: columnsStudy, spacing: 15) {
-                            ForEach(self.todayMV.todayLearnsVM.calendarItem, id: \.id) { item in
-                                Link(destination: URL(string: self.buildUrlTo(calendarItem: item))!, label: {
-                                    VStack(spacing: 5.0){
-                                        Text(item.title!.he!)
-                                            .font(.headline)
-                                            .foregroundColor(Color.black)
-                                            .multilineTextAlignment(.center)
-                                            .lineLimit(2)
-                                        Text(item.displayValue!.he!)
-                                            .font(.subheadline)
-                                            .foregroundColor(Color.black)
-                                            .multilineTextAlignment(.center)
-                                            .lineLimit(2)
+                        ScrollView {
+                            LazyVGrid(columns: columnsStudy, spacing: 15) {
+                                ForEach(self.todayMV.todayLearnsVM.calendarItem, id: \.id) { item in
+                                    Link(destination: URL(string: self.buildUrlTo(calendarItem: item))!, label: {
+                                        VStack(spacing: 5.0){
+                                            Text(item.title!.he!)
+                                                .font(.headline)
+                                                .foregroundColor(Color.black)
+                                                .multilineTextAlignment(.center)
+                                                .lineLimit(2)
+                                            Text(item.displayValue!.he!)
+                                                .font(.subheadline)
+                                                .foregroundColor(Color.black)
+                                                .multilineTextAlignment(.center)
+                                                .lineLimit(2)
 
-                                    }.frame(height: 120).background(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/).fill(Color("bg")).scaledToFill())
-                                    .shadow(color: Color.darkShadow,  radius: 5, x: 4,  y: 4)
-                                    .shadow(color: Color.lightShadow, radius: 5, x: -4, y: 4)
+                                        }.frame(height: 120).padding(.all, 8).background(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/).fill(Color("bg")).scaledToFill())
+                                        .shadow(color: Color.darkShadow,  radius: 5, x: 4,  y: 4)
+                                        .shadow(color: Color.lightShadow, radius: 5, x: -4, y: 4)
 
-                                })
+                                    })
 
-                                
-                            }
-                        }.padding(.horizontal,16)
+                                    
+                                }
+                            }.padding(.horizontal,16)
                             .padding(.top,16)
+                        }
                         
                         Spacer()
                     }
@@ -127,7 +129,7 @@ struct TodayView: View {
             }
             .navigationTitle("Today Times")
             
-        }
+//        }
         
     }
     

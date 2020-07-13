@@ -14,8 +14,9 @@ struct TheilimView: View {
     
     let columns: [GridItem] = [
         //        GridItem(.fixed(350))
-        GridItem(.adaptive(minimum: 350))
-        
+//        GridItem(.adaptive(minimum: 350))
+        GridItem(.flexible(minimum: 350, maximum: 1000))
+
     ]
     
     var body: some View {
@@ -44,6 +45,32 @@ struct TheilimView: View {
                 EmptyView()
             }
         }
+        
+        .navigationBarTitle(self.buildNavigationBarTitle(), displayMode: .automatic)
+    }
+    
+    func buildNavigationBarTitle() -> String{
+        var txt = ""
+        
+        switch self.theilimMV.menuItem.prayerMode {
+        case .Monthly:
+            txt = "Monthly Chpaters"
+        case .Weekly:
+            txt = "Weekly Chpaters"
+        case .Book:
+            print("Book")
+            txt = "All Book"
+        case .Personal:
+            txt = "Personal Chpaters"
+        case .Elul:
+            txt = "Elul Chpaters"
+        case .Single:
+            txt = "Single Chpater"
+        default:
+            txt = ""
+        }
+        
+        return txt
     }
 }
 

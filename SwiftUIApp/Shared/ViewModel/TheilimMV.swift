@@ -9,11 +9,6 @@ import SwiftUI
 import Combine
 import WidgetKit
 
-enum PrayerMode: Int {
-    case Single=0, Monthly, Weekly, Book, Personal,Spaicel,Elul, Widget
-}
-
-
 
 class TheilimMV: ObservableObject {
 
@@ -57,7 +52,7 @@ class TheilimMV: ObservableObject {
             print("Single")
         case .Spaicel:
             print("Spaicel")
-        case .Widget:
+        default:
             print("Widget")
 
         }

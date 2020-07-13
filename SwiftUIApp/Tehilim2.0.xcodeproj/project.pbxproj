@@ -8,32 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		B701A65A24B46B0E0098B8C7 /* TodayLearns.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701A65924B46B0E0098B8C7 /* TodayLearns.swift */; };
+		B719C40824BC3A2900C813F2 /* MainPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719C40724BC3A2900C813F2 /* MainPadView.swift */; };
+		B719C40A24BC428300C813F2 /* MainPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719C40924BC428300C813F2 /* MainPhoneView.swift */; };
+		B719C40C24BC432200C813F2 /* HomePadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719C40B24BC432200C813F2 /* HomePadView.swift */; };
 		B729FA4F24ACB20F00E23091 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA4E24ACB20F00E23091 /* SearchView.swift */; };
-		B729FA5024ACB20F00E23091 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA4E24ACB20F00E23091 /* SearchView.swift */; };
 		B729FA5124ACB20F00E23091 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA4E24ACB20F00E23091 /* SearchView.swift */; };
 		B729FA5224ACB20F00E23091 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA4E24ACB20F00E23091 /* SearchView.swift */; };
 		B729FA5424ACB25300E23091 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5324ACB25300E23091 /* SearchVM.swift */; };
-		B729FA5524ACB25300E23091 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5324ACB25300E23091 /* SearchVM.swift */; };
 		B729FA5624ACB25300E23091 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5324ACB25300E23091 /* SearchVM.swift */; };
 		B729FA5724ACB25300E23091 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5324ACB25300E23091 /* SearchVM.swift */; };
 		B729FA5A24ACBAE000E23091 /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5824ACBAE000E23091 /* UIResponder+Current.swift */; };
-		B729FA5B24ACBAE000E23091 /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5824ACBAE000E23091 /* UIResponder+Current.swift */; };
 		B729FA5C24ACBAE000E23091 /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5824ACBAE000E23091 /* UIResponder+Current.swift */; };
 		B729FA5D24ACBAE000E23091 /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5824ACBAE000E23091 /* UIResponder+Current.swift */; };
 		B729FA5E24ACBAE000E23091 /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5924ACBAE000E23091 /* KeyboardHeightPublisher.swift */; };
-		B729FA5F24ACBAE000E23091 /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5924ACBAE000E23091 /* KeyboardHeightPublisher.swift */; };
 		B729FA6024ACBAE000E23091 /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5924ACBAE000E23091 /* KeyboardHeightPublisher.swift */; };
 		B729FA6124ACBAE000E23091 /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5924ACBAE000E23091 /* KeyboardHeightPublisher.swift */; };
 		B729FA6324ADBEAE00E23091 /* MyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6224ADBEAE00E23091 /* MyChaptersView.swift */; };
-		B729FA6424ADBEAE00E23091 /* MyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6224ADBEAE00E23091 /* MyChaptersView.swift */; };
 		B729FA6524ADBEAE00E23091 /* MyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6224ADBEAE00E23091 /* MyChaptersView.swift */; };
 		B729FA6624ADBEAE00E23091 /* MyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6224ADBEAE00E23091 /* MyChaptersView.swift */; };
 		B729FA6824ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6724ADC5B600E23091 /* AddChapterToMyChaptersView.swift */; };
-		B729FA6924ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6724ADC5B600E23091 /* AddChapterToMyChaptersView.swift */; };
 		B729FA6A24ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6724ADC5B600E23091 /* AddChapterToMyChaptersView.swift */; };
 		B729FA6B24ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6724ADC5B600E23091 /* AddChapterToMyChaptersView.swift */; };
 		B729FA6D24ADD97C00E23091 /* MyChaptersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6C24ADD97C00E23091 /* MyChaptersListView.swift */; };
-		B729FA6E24ADD97C00E23091 /* MyChaptersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6C24ADD97C00E23091 /* MyChaptersListView.swift */; };
 		B729FA6F24ADD97C00E23091 /* MyChaptersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6C24ADD97C00E23091 /* MyChaptersListView.swift */; };
 		B729FA7024ADD97C00E23091 /* MyChaptersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA6C24ADD97C00E23091 /* MyChaptersListView.swift */; };
 		B7627BDF24B73180008935C7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7627BDE24B73180008935C7 /* WidgetKit.framework */; };
@@ -54,8 +50,8 @@
 		B7627BFF24B73E45008935C7 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7627BFC24B73E2D008935C7 /* MenuItem.swift */; };
 		B7627C0024B73E45008935C7 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7627BFC24B73E2D008935C7 /* MenuItem.swift */; };
 		B7627C0124B73E46008935C7 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7627BFC24B73E2D008935C7 /* MenuItem.swift */; };
+		B77B9CC024BB2E1700708177 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B9CBF24BB2E1700708177 /* SettingsView.swift */; };
 		B78AA30924B452E60023044C /* TodayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30824B452E60023044C /* TodayVM.swift */; };
-		B78AA30A24B452E60023044C /* TodayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30824B452E60023044C /* TodayVM.swift */; };
 		B78AA30B24B452E60023044C /* TodayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30824B452E60023044C /* TodayVM.swift */; };
 		B78AA30C24B452E60023044C /* TodayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30824B452E60023044C /* TodayVM.swift */; };
 		B78AA30E24B45E100023044C /* TodayTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30D24B45E100023044C /* TodayTimes.swift */; };
@@ -63,7 +59,6 @@
 		B78AA31024B45E100023044C /* TodayTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30D24B45E100023044C /* TodayTimes.swift */; };
 		B78AA31124B45E100023044C /* TodayTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30D24B45E100023044C /* TodayTimes.swift */; };
 		B78AA31424B4612C0023044C /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA31324B4612C0023044C /* TodayView.swift */; };
-		B78AA31524B4612C0023044C /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA31324B4612C0023044C /* TodayView.swift */; };
 		B78AA31624B4612C0023044C /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA31324B4612C0023044C /* TodayView.swift */; };
 		B78AA31724B4612C0023044C /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA31324B4612C0023044C /* TodayView.swift */; };
 		B7A0F80424B487DD008A1FFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7A0F80924B487DD008A1FFD /* Localizable.strings */; };
@@ -71,7 +66,6 @@
 		B7A0F80624B487DD008A1FFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7A0F80924B487DD008A1FFD /* Localizable.strings */; };
 		B7A0F80724B487DD008A1FFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7A0F80924B487DD008A1FFD /* Localizable.strings */; };
 		B7A0F80B24B4967A008A1FFD /* TodayTimesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80A24B4967A008A1FFD /* TodayTimesVM.swift */; };
-		B7A0F80C24B4967A008A1FFD /* TodayTimesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80A24B4967A008A1FFD /* TodayTimesVM.swift */; };
 		B7A0F80D24B4967A008A1FFD /* TodayTimesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80A24B4967A008A1FFD /* TodayTimesVM.swift */; };
 		B7A0F80E24B4967A008A1FFD /* TodayTimesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80A24B4967A008A1FFD /* TodayTimesVM.swift */; };
 		B7A0F81024B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80F24B4F22F008A1FFD /* TodayLearnsVM.swift */; };
@@ -79,7 +73,6 @@
 		B7A0F81224B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80F24B4F22F008A1FFD /* TodayLearnsVM.swift */; };
 		B7A0F81324B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80F24B4F22F008A1FFD /* TodayLearnsVM.swift */; };
 		B7A0F81524B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
-		B7A0F81624B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
 		B7A0F81724B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
 		B7A0F81824B5F95E008A1FFD /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */; };
 		B7B2E12F24BAEC6A00A0D5CA /* dateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E12E24BAEC6A00A0D5CA /* dateExtension.swift */; };
@@ -87,12 +80,20 @@
 		B7B2E13324BAEF1000A0D5CA /* ChapterDivisionStoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E13224BAEF1000A0D5CA /* ChapterDivisionStoreElement.swift */; };
 		B7B2E13424BAF02900A0D5CA /* ChapterDivisionStoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E13224BAEF1000A0D5CA /* ChapterDivisionStoreElement.swift */; };
 		B7B2E13524BAF02A00A0D5CA /* ChapterDivisionStoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E13224BAEF1000A0D5CA /* ChapterDivisionStoreElement.swift */; };
+		B7B2E13624BB01DD00A0D5CA /* TodayLearns.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701A65924B46B0E0098B8C7 /* TodayLearns.swift */; };
+		B7B2E13724BB01F500A0D5CA /* dateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E12E24BAEC6A00A0D5CA /* dateExtension.swift */; };
+		B7B2E13824BB025B00A0D5CA /* TodayTimesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0F80A24B4967A008A1FFD /* TodayTimesVM.swift */; };
+		B7B2E13924BB025E00A0D5CA /* TheilimMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EF24AC95C000D3AAEC /* TheilimMV.swift */; };
+		B7B2E13A24BB026000A0D5CA /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B729FA5324ACB25300E23091 /* SearchVM.swift */; };
+		B7B2E13B24BB026300A0D5CA /* TodayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AA30824B452E60023044C /* TodayVM.swift */; };
+		B7B2E18024BB055E00A0D5CA /* ContentMacView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E17F24BB055E00A0D5CA /* ContentMacView.swift */; };
+		B7B2E18324BB05EF00A0D5CA /* NavigationPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E18224BB05EF00A0D5CA /* NavigationPrimary.swift */; };
+		B7B2E18524BB073800A0D5CA /* NavigationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B2E18424BB073800A0D5CA /* NavigationDetail.swift */; };
 		B7CA459124AC653C00D3AAEC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA459024AC653C00D3AAEC /* Tests_iOS.swift */; };
 		B7CA459C24AC653C00D3AAEC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA459B24AC653C00D3AAEC /* Tests_macOS.swift */; };
 		B7CA459E24AC653C00D3AAEC /* Tehilim2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA457524AC653B00D3AAEC /* Tehilim2_0App.swift */; };
 		B7CA459F24AC653C00D3AAEC /* Tehilim2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA457524AC653B00D3AAEC /* Tehilim2_0App.swift */; };
 		B7CA45A024AC653C00D3AAEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA457624AC653B00D3AAEC /* ContentView.swift */; };
-		B7CA45A124AC653C00D3AAEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA457624AC653B00D3AAEC /* ContentView.swift */; };
 		B7CA45A224AC653C00D3AAEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7CA457724AC653C00D3AAEC /* Assets.xcassets */; };
 		B7CA45A324AC653C00D3AAEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7CA457724AC653C00D3AAEC /* Assets.xcassets */; };
 		B7CA45B424AC665600D3AAEC /* TehilimDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45B224AC665600D3AAEC /* TehilimDB.xcdatamodeld */; };
@@ -123,22 +124,21 @@
 		B7CA45D524AC777800D3AAEC /* WeeklyThilim.json in Resources */ = {isa = PBXBuildFile; fileRef = B7CA45D324AC777800D3AAEC /* WeeklyThilim.json */; };
 		B7CA45D624AC777800D3AAEC /* WeeklyThilim.json in Resources */ = {isa = PBXBuildFile; fileRef = B7CA45D324AC777800D3AAEC /* WeeklyThilim.json */; };
 		B7CA45D724AC777800D3AAEC /* WeeklyThilim.json in Resources */ = {isa = PBXBuildFile; fileRef = B7CA45D324AC777800D3AAEC /* WeeklyThilim.json */; };
-		B7CA45DB24AC7C5A00D3AAEC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45DA24AC7C5A00D3AAEC /* Home.swift */; };
-		B7CA45DC24AC7C5A00D3AAEC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45DA24AC7C5A00D3AAEC /* Home.swift */; };
-		B7CA45DD24AC7C5A00D3AAEC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45DA24AC7C5A00D3AAEC /* Home.swift */; };
-		B7CA45DE24AC7C5A00D3AAEC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45DA24AC7C5A00D3AAEC /* Home.swift */; };
+		B7CA45DB24AC7C5A00D3AAEC /* HomePhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45DA24AC7C5A00D3AAEC /* HomePhoneView.swift */; };
+		B7CA45DD24AC7C5A00D3AAEC /* HomePhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45DA24AC7C5A00D3AAEC /* HomePhoneView.swift */; };
+		B7CA45DE24AC7C5A00D3AAEC /* HomePhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45DA24AC7C5A00D3AAEC /* HomePhoneView.swift */; };
 		B7CA45E624AC873B00D3AAEC /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45E524AC873B00D3AAEC /* NeumorphicEffect.swift */; };
 		B7CA45E724AC873B00D3AAEC /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45E524AC873B00D3AAEC /* NeumorphicEffect.swift */; };
 		B7CA45E824AC873B00D3AAEC /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45E524AC873B00D3AAEC /* NeumorphicEffect.swift */; };
 		B7CA45E924AC873B00D3AAEC /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45E524AC873B00D3AAEC /* NeumorphicEffect.swift */; };
 		B7CA45EB24AC95A200D3AAEC /* TheilimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EA24AC95A200D3AAEC /* TheilimView.swift */; };
-		B7CA45EC24AC95A200D3AAEC /* TheilimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EA24AC95A200D3AAEC /* TheilimView.swift */; };
 		B7CA45ED24AC95A200D3AAEC /* TheilimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EA24AC95A200D3AAEC /* TheilimView.swift */; };
 		B7CA45EE24AC95A200D3AAEC /* TheilimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EA24AC95A200D3AAEC /* TheilimView.swift */; };
 		B7CA45F024AC95C000D3AAEC /* TheilimMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EF24AC95C000D3AAEC /* TheilimMV.swift */; };
-		B7CA45F124AC95C000D3AAEC /* TheilimMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EF24AC95C000D3AAEC /* TheilimMV.swift */; };
 		B7CA45F224AC95C000D3AAEC /* TheilimMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EF24AC95C000D3AAEC /* TheilimMV.swift */; };
 		B7CA45F324AC95C000D3AAEC /* TheilimMV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CA45EF24AC95C000D3AAEC /* TheilimMV.swift */; };
+		B7CB6C7524BB9E5C00B66999 /* ENavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB6C7424BB9E5C00B66999 /* ENavigationView.swift */; };
+		B7CB6C7624BB9EAB00B66999 /* ENavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB6C7424BB9E5C00B66999 /* ENavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +181,9 @@
 
 /* Begin PBXFileReference section */
 		B701A65924B46B0E0098B8C7 /* TodayLearns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLearns.swift; sourceTree = "<group>"; };
+		B719C40724BC3A2900C813F2 /* MainPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPadView.swift; sourceTree = "<group>"; };
+		B719C40924BC428300C813F2 /* MainPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhoneView.swift; sourceTree = "<group>"; };
+		B719C40B24BC432200C813F2 /* HomePadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePadView.swift; sourceTree = "<group>"; };
 		B729FA4E24ACB20F00E23091 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		B729FA5324ACB25300E23091 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		B729FA5824ACBAE000E23091 /* UIResponder+Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Current.swift"; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 		B7627BF224B731B2008935C7 /* Tehilim2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tehilim2.0.entitlements; sourceTree = "<group>"; };
 		B7627BF324B736CB008935C7 /* TehilimWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TehilimWidgetExtension.entitlements; sourceTree = "<group>"; };
 		B7627BFC24B73E2D008935C7 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		B77B9CBF24BB2E1700708177 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B78AA30824B452E60023044C /* TodayVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVM.swift; sourceTree = "<group>"; };
 		B78AA30D24B45E100023044C /* TodayTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTimes.swift; sourceTree = "<group>"; };
 		B78AA31324B4612C0023044C /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
@@ -207,6 +211,9 @@
 		B7A0F81424B5F95E008A1FFD /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		B7B2E12E24BAEC6A00A0D5CA /* dateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateExtension.swift; sourceTree = "<group>"; };
 		B7B2E13224BAEF1000A0D5CA /* ChapterDivisionStoreElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDivisionStoreElement.swift; sourceTree = "<group>"; };
+		B7B2E17F24BB055E00A0D5CA /* ContentMacView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMacView.swift; sourceTree = "<group>"; };
+		B7B2E18224BB05EF00A0D5CA /* NavigationPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPrimary.swift; sourceTree = "<group>"; };
+		B7B2E18424BB073800A0D5CA /* NavigationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDetail.swift; sourceTree = "<group>"; };
 		B7CA457524AC653B00D3AAEC /* Tehilim2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tehilim2_0App.swift; sourceTree = "<group>"; };
 		B7CA457624AC653B00D3AAEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B7CA457724AC653C00D3AAEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,10 +235,11 @@
 		B7CA45C924AC771D00D3AAEC /* AlulThilim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AlulThilim.json; sourceTree = "<group>"; };
 		B7CA45CE24AC772600D3AAEC /* BoooksThilim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BoooksThilim.json; sourceTree = "<group>"; };
 		B7CA45D324AC777800D3AAEC /* WeeklyThilim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WeeklyThilim.json; sourceTree = "<group>"; };
-		B7CA45DA24AC7C5A00D3AAEC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		B7CA45DA24AC7C5A00D3AAEC /* HomePhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhoneView.swift; sourceTree = "<group>"; };
 		B7CA45E524AC873B00D3AAEC /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
 		B7CA45EA24AC95A200D3AAEC /* TheilimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheilimView.swift; sourceTree = "<group>"; };
 		B7CA45EF24AC95C000D3AAEC /* TheilimMV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheilimMV.swift; sourceTree = "<group>"; };
+		B7CB6C7424BB9E5C00B66999 /* ENavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +311,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B7B2E18124BB05DC00A0D5CA /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				B7B2E18224BB05EF00A0D5CA /* NavigationPrimary.swift */,
+				B7B2E18424BB073800A0D5CA /* NavigationDetail.swift */,
+				B77B9CBF24BB2E1700708177 /* SettingsView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
 		B7CA456F24AC653B00D3AAEC = {
 			isa = PBXGroup;
 			children = (
@@ -323,14 +341,11 @@
 			isa = PBXGroup;
 			children = (
 				B7B2E12D24BAEC4E00A0D5CA /* Extensions */,
-				B7DAA9A524B131F700DDD866 /* Helpers */,
 				B7CA45E424AC872900D3AAEC /* Modifiers */,
 				B7CA45BD24AC745B00D3AAEC /* Model */,
 				B7CA45BE24AC746700D3AAEC /* Data */,
 				B7CA45D924AC7C3D00D3AAEC /* ViewModel */,
-				B7CA45D824AC7C3800D3AAEC /* View */,
 				B7CA457524AC653B00D3AAEC /* Tehilim2_0App.swift */,
-				B7CA457624AC653B00D3AAEC /* ContentView.swift */,
 				B7CA457724AC653C00D3AAEC /* Assets.xcassets */,
 				B7CA45B824AC69FB00D3AAEC /* PersistentStore.swift */,
 			);
@@ -352,6 +367,9 @@
 		B7CA457E24AC653C00D3AAEC /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B7CA457624AC653B00D3AAEC /* ContentView.swift */,
+				B7DAA9A524B131F700DDD866 /* Helpers */,
+				B7CA45D824AC7C3800D3AAEC /* View */,
 				B7627BF224B731B2008935C7 /* Tehilim2.0.entitlements */,
 				B7CA457F24AC653C00D3AAEC /* Info.plist */,
 			);
@@ -361,6 +379,8 @@
 		B7CA458524AC653C00D3AAEC /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				B7B2E17F24BB055E00A0D5CA /* ContentMacView.swift */,
+				B7B2E18124BB05DC00A0D5CA /* VIews */,
 				B7CA458624AC653C00D3AAEC /* Info.plist */,
 				B7CA458724AC653C00D3AAEC /* macOS.entitlements */,
 			);
@@ -412,7 +432,10 @@
 		B7CA45D824AC7C3800D3AAEC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B7CA45DA24AC7C5A00D3AAEC /* Home.swift */,
+				B719C40924BC428300C813F2 /* MainPhoneView.swift */,
+				B719C40724BC3A2900C813F2 /* MainPadView.swift */,
+				B7CA45DA24AC7C5A00D3AAEC /* HomePhoneView.swift */,
+				B719C40B24BC432200C813F2 /* HomePadView.swift */,
 				B7CA45EA24AC95A200D3AAEC /* TheilimView.swift */,
 				B729FA4E24ACB20F00E23091 /* SearchView.swift */,
 				B78AA31324B4612C0023044C /* TodayView.swift */,
@@ -449,6 +472,7 @@
 			children = (
 				B729FA5924ACBAE000E23091 /* KeyboardHeightPublisher.swift */,
 				B729FA5824ACBAE000E23091 /* UIResponder+Current.swift */,
+				B7CB6C7424BB9E5C00B66999 /* ENavigationView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -685,21 +709,25 @@
 				B7CA45EB24AC95A200D3AAEC /* TheilimView.swift in Sources */,
 				B729FA5E24ACBAE000E23091 /* KeyboardHeightPublisher.swift in Sources */,
 				B7B2E12F24BAEC6A00A0D5CA /* dateExtension.swift in Sources */,
+				B719C40A24BC428300C813F2 /* MainPhoneView.swift in Sources */,
 				B729FA6324ADBEAE00E23091 /* MyChaptersView.swift in Sources */,
 				B701A65A24B46B0E0098B8C7 /* TodayLearns.swift in Sources */,
 				B7627BEA24B73184008935C7 /* TehilimWidget.intentdefinition in Sources */,
 				B729FA4F24ACB20F00E23091 /* SearchView.swift in Sources */,
 				B7CA45B924AC69FB00D3AAEC /* PersistentStore.swift in Sources */,
+				B7CB6C7524BB9E5C00B66999 /* ENavigationView.swift in Sources */,
 				B78AA31424B4612C0023044C /* TodayView.swift in Sources */,
 				B729FA6824ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */,
 				B7A0F80B24B4967A008A1FFD /* TodayTimesVM.swift in Sources */,
 				B78AA30924B452E60023044C /* TodayVM.swift in Sources */,
+				B719C40C24BC432200C813F2 /* HomePadView.swift in Sources */,
 				B7627BFD24B73E2D008935C7 /* MenuItem.swift in Sources */,
 				B729FA5A24ACBAE000E23091 /* UIResponder+Current.swift in Sources */,
+				B719C40824BC3A2900C813F2 /* MainPadView.swift in Sources */,
 				B729FA6D24ADD97C00E23091 /* MyChaptersListView.swift in Sources */,
 				B7CA459E24AC653C00D3AAEC /* Tehilim2_0App.swift in Sources */,
 				B7B2E13324BAEF1000A0D5CA /* ChapterDivisionStoreElement.swift in Sources */,
-				B7CA45DB24AC7C5A00D3AAEC /* Home.swift in Sources */,
+				B7CA45DB24AC7C5A00D3AAEC /* HomePhoneView.swift in Sources */,
 				B7A0F81524B5F95E008A1FFD /* AboutUsView.swift in Sources */,
 				B78AA30E24B45E100023044C /* TodayTimes.swift in Sources */,
 				B7CA45C024AC747F00D3AAEC /* ChapterDivisionElement.swift in Sources */,
@@ -714,29 +742,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7627BFE24B73E44008935C7 /* MenuItem.swift in Sources */,
-				B7CA45A124AC653C00D3AAEC /* ContentView.swift in Sources */,
+				B7B2E13624BB01DD00A0D5CA /* TodayLearns.swift in Sources */,
+				B7B2E18324BB05EF00A0D5CA /* NavigationPrimary.swift in Sources */,
+				B7B2E18024BB055E00A0D5CA /* ContentMacView.swift in Sources */,
 				B7CA45B524AC665600D3AAEC /* TehilimDB.xcdatamodeld in Sources */,
+				B7B2E13A24BB026000A0D5CA /* SearchVM.swift in Sources */,
 				B7CA45E724AC873B00D3AAEC /* NeumorphicEffect.swift in Sources */,
-				B7CA45EC24AC95A200D3AAEC /* TheilimView.swift in Sources */,
-				B729FA5F24ACBAE000E23091 /* KeyboardHeightPublisher.swift in Sources */,
-				B729FA6424ADBEAE00E23091 /* MyChaptersView.swift in Sources */,
-				B729FA5024ACB20F00E23091 /* SearchView.swift in Sources */,
+				B7B2E13724BB01F500A0D5CA /* dateExtension.swift in Sources */,
+				B7CB6C7624BB9EAB00B66999 /* ENavigationView.swift in Sources */,
+				B7B2E18524BB073800A0D5CA /* NavigationDetail.swift in Sources */,
 				B7CA45BA24AC69FB00D3AAEC /* PersistentStore.swift in Sources */,
-				B78AA31524B4612C0023044C /* TodayView.swift in Sources */,
-				B729FA6924ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */,
-				B78AA30A24B452E60023044C /* TodayVM.swift in Sources */,
-				B7A0F80C24B4967A008A1FFD /* TodayTimesVM.swift in Sources */,
+				B7B2E13B24BB026300A0D5CA /* TodayVM.swift in Sources */,
+				B7B2E13824BB025B00A0D5CA /* TodayTimesVM.swift in Sources */,
 				B7B2E13524BAF02A00A0D5CA /* ChapterDivisionStoreElement.swift in Sources */,
 				B7A0F81124B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */,
-				B729FA5B24ACBAE000E23091 /* UIResponder+Current.swift in Sources */,
-				B729FA6E24ADD97C00E23091 /* MyChaptersListView.swift in Sources */,
 				B7CA459F24AC653C00D3AAEC /* Tehilim2_0App.swift in Sources */,
-				B7CA45DC24AC7C5A00D3AAEC /* Home.swift in Sources */,
 				B78AA30F24B45E100023044C /* TodayTimes.swift in Sources */,
-				B7A0F81624B5F95E008A1FFD /* AboutUsView.swift in Sources */,
+				B7B2E13924BB025E00A0D5CA /* TheilimMV.swift in Sources */,
 				B7CA45C124AC747F00D3AAEC /* ChapterDivisionElement.swift in Sources */,
-				B729FA5524ACB25300E23091 /* SearchVM.swift in Sources */,
-				B7CA45F124AC95C000D3AAEC /* TheilimMV.swift in Sources */,
+				B77B9CC024BB2E1700708177 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,7 +785,7 @@
 				B729FA6A24ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */,
 				B78AA30B24B452E60023044C /* TodayVM.swift in Sources */,
 				B7A0F81224B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */,
-				B7CA45DD24AC7C5A00D3AAEC /* Home.swift in Sources */,
+				B7CA45DD24AC7C5A00D3AAEC /* HomePhoneView.swift in Sources */,
 				B7CA459124AC653C00D3AAEC /* Tests_iOS.swift in Sources */,
 				B7627BFF24B73E45008935C7 /* MenuItem.swift in Sources */,
 				B78AA31024B45E100023044C /* TodayTimes.swift in Sources */,
@@ -790,7 +814,7 @@
 				B729FA6B24ADC5B600E23091 /* AddChapterToMyChaptersView.swift in Sources */,
 				B78AA30C24B452E60023044C /* TodayVM.swift in Sources */,
 				B7A0F81324B4F22F008A1FFD /* TodayLearnsVM.swift in Sources */,
-				B7CA45DE24AC7C5A00D3AAEC /* Home.swift in Sources */,
+				B7CA45DE24AC7C5A00D3AAEC /* HomePhoneView.swift in Sources */,
 				B7CA459C24AC653C00D3AAEC /* Tests_macOS.swift in Sources */,
 				B7627C0024B73E45008935C7 /* MenuItem.swift in Sources */,
 				B78AA31124B45E100023044C /* TodayTimes.swift in Sources */,

@@ -13,10 +13,33 @@ struct Tehilim2_0App: App {
     
     let context = PersistentStore.shared.persistentContainer.viewContext
 
-    var body: some Scene {
+    @SceneBuilder var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, context)
+            #if os(macOS)
+                ContentMacView()
+                    .environment(\.managedObjectContext, context)
+            #else
+                ContentView()
+                    .environment(\.managedObjectContext, context)
+            #endif
         }
+        #if os(macOS)
+        Settings {
+            SettingsView() // Passed as an observed object.
+        }
+        #endif
+
+//        #if os(macOS)
+//        Settings {
+//            ContentMacView()
+//
+//        }
+//        #endif
+    }
+}
+
+struct Tehilim2_0App_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

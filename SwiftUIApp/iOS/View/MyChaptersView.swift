@@ -31,7 +31,9 @@ struct MyChaptersView: View {
     @State var title: String = ""
 
     let columns: [GridItem] = [
-        GridItem(.adaptive(minimum: 350))
+//        GridItem(.adaptive(minimum: 350))
+        GridItem(.flexible(minimum: 350, maximum: 700))
+
     ]
     
     var dateFormatter: DateFormatter {

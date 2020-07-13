@@ -7,7 +7,10 @@
 //
 
 import Combine
+
+#if !os(macOS)
 import UIKit
+#endif
 
 extension Publishers {
     static var keyboardHeight: AnyPublisher<CGFloat, Never> {

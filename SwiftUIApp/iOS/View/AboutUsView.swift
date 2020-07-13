@@ -11,7 +11,7 @@ struct AboutUsView: View {
     
     var body: some View {
         
-        NavigationView{
+//        NavigationView {
             
             ZStack {
                 
@@ -48,7 +48,7 @@ struct AboutUsView: View {
                 .navigationTitle("About Us")
 
             }
-        }
+//        }
     }
 }
 

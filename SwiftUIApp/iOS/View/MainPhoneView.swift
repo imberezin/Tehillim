@@ -1,93 +1,64 @@
 //
-//  ContentView.swift
-//  Shared
+//  MainPhoneView.swift
+//  iOS
 //
-//  Created by israel.berezin on 01/07/2020.
+//  Created by israel.berezin on 13/07/2020.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainPhoneView: View {
     
     @Environment(\.managedObjectContext) var moc
     
     @State var selected = 0
     
     var body: some View {
-        
-        ZStack {
+
+        VStack {
             
-            Color("bg").edgesIgnoringSafeArea(.all)
+            switch self.selected {
+            case 0:
+                HomePhoneView().edgesIgnoringSafeArea(.bottom)
+            case 1:
+                ENavigationView {SearchView()}.edgesIgnoringSafeArea(.bottom)
+            case 2:
+                ENavigationView {TodayView()}.edgesIgnoringSafeArea(.bottom)
+            case 3:
+                ENavigationView {AboutUsView()}.edgesIgnoringSafeArea(.bottom)
+            default:
+                ENavigationView {MyChaptersListView()}.edgesIgnoringSafeArea(.bottom)
+            }
             
-            VStack{
+            Spacer()
+            
+            ZStack(alignment: .top){
                 
-                switch self.selected {
-                case 0:
-                    Home().edgesIgnoringSafeArea(.bottom)
-                case 1:
-                    SearchView().edgesIgnoringSafeArea(.bottom)
-                case 2:
-                    TodayView().edgesIgnoringSafeArea(.bottom)
-                case 3:
-                    AboutUsView().edgesIgnoringSafeArea(.bottom)
-                default:
-                    MyChaptersListView().edgesIgnoringSafeArea(.bottom)
-                }
+                BottomBar(selected: self.$selected)
+                    .padding()
+                    .padding(.horizontal, 22)
+                    .background(CurvedShape())
                 
-                Spacer()
-                
-                ZStack(alignment: .top){
+                Button(action: {
+                    self.selected = 5
+                }) {
                     
-                    BottomBar(selected: self.$selected)
-                        .padding()
-                        .padding(.horizontal, 22)
-                        .background(CurvedShape())
+                    Image("Wishlist").renderingMode(.original).padding(18)
                     
-                    Button(action: {
-                        self.selected = 5
-                    }) {
-                        
-                        Image("Wishlist").renderingMode(.original).padding(18)
-                        
-                    }.background(Color.yellow)
-                    .clipShape(Circle())
-                    .offset(y: -32)
-                    .shadow(radius: 5)
-                    
-                }
+                }.background(Color.yellow)
+                .clipShape(Circle())
+                .offset(y: -32)
+                .shadow(radius: 5)
                 
             }
+            
         }
     }
-    
-    func saveChapter(){
-        //            let chapter = SaveChapter(context: moc)
-        //            chapter.name = "test"
-        //            chapter.index = 0
-        //            chapter.number = 91
-        //            do {
-        //                try moc.save()
-        //            } catch let error as NSError {
-        //                print("Could not save. \(error), \(error.userInfo)")
-        //            }
-        
-    }
-    
-    func loadJson(fileName: String) {
-        
-        let url = Bundle.main.url(forResource: fileName, withExtension: "json")
-        let data = try? Data(contentsOf: url!)
-        
-        let chapterDivision = try! ChapterDivision(data: data!)
-        print(chapterDivision.count)
-        //
-    }
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainPhoneView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainPhoneView()
     }
 }
 

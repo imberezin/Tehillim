@@ -7,8 +7,9 @@
 //
 
 import Foundation
+#if !os(macOS)
 import UIKit
-
+#endif
 // From https://stackoverflow.com/a/14135456/6870041
 extension UIResponder {
     static var currentFirstResponder: UIResponder? {
