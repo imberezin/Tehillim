@@ -29,12 +29,10 @@ struct MyChaptersListView: View {
     
     @State var title: String = ""
     
-    @State private var birthDate = Date()
+    @State var birthDate = Date()
     
     @State var showOneRecored: Bool = false
-    
-    @State var timePickerExpanded: Bool = true
-    
+        
     @Namespace var namespaceA
     
     let selectedObject = SelectedChapterObject()
@@ -63,26 +61,13 @@ struct MyChaptersListView: View {
                     
                     ForEach(chapters, id: \.self) { chapter in
                         
-                        ZStack {
-                            
-                            Rectangle().fill(Color.white).frame(height: 60).cornerRadius(10)
-                            
-                            HStack{
-                                
-                                Text(chapter.name!)
-                                Spacer()
-                                Image(systemName: chapter.isCounstChapter ? "heart.circle" : "calendar.circle" )
-                                    .imageScale(.large)
-                                    .font(.largeTitle)
-                                    .onTapGesture {
-                                        self.cellImageOnTapGesture(chapter: chapter)
-                                    }
-                                
-                            }.padding(.horizontal, 16)
-                            
+                        SmallChaptersCellView(chapter: chapter){ chapter in
+                            self.cellImageOnTapGesture(chapter: chapter)
                         }
-                        .padding(.vertical, 8)
+                        .listRowInsets(EdgeInsets())
+                        .background(Color.white)
                         .matchedGeometryEffect(id: "aaa_\(chapter.index)", in: namespaceA)
+
                     }
                     .onDelete { (indexSet) in
                         print("delete \(indexSet)")
@@ -98,9 +83,10 @@ struct MyChaptersListView: View {
                     }
                     
                     
-                }.padding(.horizontal, -8)
+                }.padding(.horizontal, -16)
                 .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
-            }
+            }.zIndex(1)
+            
             
             .navigationBarTitle("My chapters", displayMode: .automatic)
             .navigationBarItems(leading: HStack {
@@ -118,118 +104,19 @@ struct MyChaptersListView: View {
                 }
             })
             
-            if self.showOneRecored {
-                
-                VStack(spacing: 15){
+            if self.showOneRecored  {
+                Color("bg").opacity(0.5).overlay(
+
+                BigChaptersCellView(selectedObject: self.selectedObject, title: self.$title, birthDate: self.$birthDate, selectedChepter: self.$selectedChepter) { chapter in
+                    self.updateSavedChapter(chapter: self.selectedObject.selectedChapter!)
+                    self.showOneRecored.toggle()
                     
-                    HStack{
-                        Text(self.selectedObject.selectedChapter!.name!)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-                        Image(systemName: self.selectedObject.selectedChapter!.isCounstChapter ? "heart.circle" : "calendar.circle" )
-                            .imageScale(.large)
-                            .font(.title2)
-                    }.padding(.all, 8)
-                    .background(Color(.white))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(.horizontal, 8)
-                    .padding(.top, 16)
-                    //                        .matchedGeometryEffect(id: "aaa_\(self.aaa.selectedChapter!.index)", in: namespaceA)
-                    
-                    if self.selectedObject.selectedChapter?.isCounstChapter == true {
-                        VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Update Chaprer number:")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .lineLimit(1)
-                            TextField("chaprer number", text: self.$selectedChepter)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .keyboardType(.numberPad)
-                        }.padding(.top, 12)
-                        .padding([.horizontal, .bottom] , 8 )
-                        
-                        VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Update Name of recored:")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .lineLimit(1)
-                            TextField("Title", text: self.$title)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                        }.padding(.all, 8)
-                        
-                    } else {
-                        HStack{
-                            
-                            DisclosureGroup(
-                                isExpanded: $timePickerExpanded,
-                                content: {
-                                    HStack(spacing: 8.0){
-                                        
-                                        if self.selectedObject.selectedChapter?.hebrewBirthday != nil {
-                                            DatePickerUIKit(selection: $birthDate, minuteInterval: 30)
-                                                .frame(maxHeight: 50)
-                                        } else {
-                                            DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
-                                                EmptyView()
-                                            }
-                                            .frame(maxHeight: 50)
-                                        }
-                                    }
-                                },
-                                label: { self.selectedObject.selectedChapter?.hebrewBirthday != nil ?
-                                    Text("Update Hebrow Birthday")
-                                    .fontWeight(.semibold)
-                                    .lineLimit(1)
-                                    .padding(.leading, 0) :
-                                    Text("Update Gregorian Birthday")
-                                    .fontWeight(.semibold)
-                                    .lineLimit(1)
-                                    .padding(.leading, 4)
-                                }
-                            )
-                        }
-                        .padding(.leading, self.selectedObject.selectedChapter?.hebrewBirthday != nil ? 8 : 4)
-                        .padding([.vertical, .trailing] , 8 )
-                        
-                        VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Update Name of recored:")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .lineLimit(1)
-                            TextField("Title", text: self.$title)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                        }.padding(.all, 8)
-                        
-                    }
-                    
-                    HStack(spacing: 20) {
-                        Button(action: {
-                            withAnimation(.spring()){
-                                self.showOneRecored.toggle()
-                            }
-                        }){
-                            Text("Close").padding(.vertical, 16).padding(.horizontal, 32)
-                        }
-                        .padding(.all, 6)
-                        .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
-                        
-                        Button(action: {
-                            withAnimation(.spring()){
-                                self.updateSavedChapter(chapter: self.selectedObject.selectedChapter!)
-                                self.showOneRecored.toggle()
-                            }
-                            
-                        }){
-                            Text("Update").padding(.vertical, 16).padding(.horizontal, 32)
-                        }
-                        .padding(.all, 6)
-                        .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
-                    }
-                    
-                }.frame(height: 360).background(Color("bg"))
-                .clipShape(RoundedRectangle(cornerRadius: 10)).padding(.horizontal, 8)
+                } closeView: {
+                    self.showOneRecored.toggle()
+                }
                 .matchedGeometryEffect(id: "aaa_\(self.selectedObject.selectedChapter!.index)", in: namespaceA)
+
+                    ,alignment: .center).zIndex(2)
             }
         }
         .sheet(isPresented: self.$showAddView) {
@@ -319,7 +206,6 @@ struct MyChaptersListView: View {
 }
 
 
-
 struct MyChaptersListView_Previews: PreviewProvider {
     static var previews: some View {
         MyChaptersListView()
@@ -327,67 +213,180 @@ struct MyChaptersListView_Previews: PreviewProvider {
 }
 
 
-struct HideRowSeparatorModifier: ViewModifier {
+struct SmallChaptersCellView: View {
     
-    static let defaultListRowHeight: CGFloat = 60
+    let chapter : SaveChapter
     
-    var insets: EdgeInsets
-    var background: Color
+    var cellOnTapGesture: ((_ chapter : SaveChapter) -> Void)? = nil
     
-    init(insets: EdgeInsets, background: Color) {
-        self.insets = insets
+    var body: some View {
         
-        var alpha: CGFloat = 0
-        UIColor(background).getWhite(nil, alpha: &alpha)
-        assert(alpha == 1, "Setting background to a non-opaque color will result in separators remaining visible.")
-        self.background = background
+        HStack{
+            Text(chapter.name!)
+                .font(.title)
+                .fontWeight(.bold)
+            Spacer()
+                Image(systemName: chapter.isCounstChapter ? "heart.circle" : "calendar.circle" )
+                .imageScale(.large)
+                .font(.title2)
+                .onTapGesture {
+                    self.cellOnTapGesture!(chapter)
+                }
+
+        }.padding(.all, 8)
+        .background(Color(.white))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding(.all, 16)
+//        .frame(height: 80)
+        .background(Color("bg"))
+        .clipShape(RoundedRectangle(cornerRadius: 10)).padding(.all,8)
     }
     
-    func body(content: Content) -> some View {
-        content
-            .padding(insets)
-            .frame(
-                minWidth: 0, maxWidth: .infinity,
-                minHeight: Self.defaultListRowHeight,
-                alignment: .leading
-            )
-            .listRowInsets(EdgeInsets())
-            .background(background)
-    }
 }
+/*
+ .background(Color(.white))
+ .clipShape(RoundedRectangle(cornerRadius: 10))
+ .padding(.horizontal, 8)
+//        .frame(height: 80)
+ .background(Color("bg"))
+ .clipShape(RoundedRectangle(cornerRadius: 10)).padding(.all,16)
 
-extension EdgeInsets {
-    
-    static let defaultListRowInsets = Self(top: 0, leading: 16, bottom: 0, trailing: 16)
-}
+ */
 
-extension View {
-    
-    
-    func hideRowSeparator(
-        insets: EdgeInsets = .defaultListRowInsets,
-        background: Color = .white
-    ) -> some View {
-        modifier(HideRowSeparatorModifier(
-            insets: insets,
-            background: background
-        ))
-    }
-}
 
-struct HideRowSeparator_Previews: PreviewProvider {
+struct BigChaptersCellView: View {
     
-    static var previews: some View {
-        List {
-            ForEach(0..<10) { _ in
-                Text("Text")
-                    .hideRowSeparator()
+    @State var timePickerExpanded: Bool = true
+    
+    
+    public let selectedObject: SelectedChapterObject
+    
+    @Binding var title: String
+    
+    @Binding var birthDate: Date
+    
+    @Binding var selectedChepter: String
+    
+    let saveChapterInDB: ((_ chapter : SaveChapter) -> Void)
+    
+    let closeView: (() -> Void)
+    
+    
+    var body: some View {
+        
+        VStack(spacing: 15){
+            
+            HStack{
+                Text(self.selectedObject.selectedChapter!.name!)
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer()
+                Image(systemName: self.selectedObject.selectedChapter!.isCounstChapter ? "heart.circle" : "calendar.circle" )
+                    .imageScale(.large)
+                    .font(.title2)
+            }.padding(.all, 8)
+            .background(Color(.white))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(.horizontal, 8)
+            .padding(.top, 16)
+            
+            if self.selectedObject.selectedChapter?.isCounstChapter == true {
+                VStack(alignment: .leading, spacing: 8.0) {
+                    Text("Update Chaprer number:")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                    TextField("chaprer number", text: self.$selectedChepter)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
+                }.padding(.top, 12)
+                .padding([.horizontal, .bottom] , 8 )
+                
+                VStack(alignment: .leading, spacing: 8.0) {
+                    Text("Update Name of recored:")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                    TextField("Title", text: self.$title)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }.padding(.all, 8)
+                
+            } else {
+                HStack{
+                    
+                    DisclosureGroup(
+                        isExpanded: $timePickerExpanded,
+                        content: {
+                            HStack(spacing: 8.0){
+                                
+                                if self.selectedObject.selectedChapter?.hebrewBirthday != nil {
+                                    DatePickerUIKit(selection: $birthDate, minuteInterval: 30)
+                                        .frame(maxHeight: 50)
+                                } else {
+                                    DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
+                                        EmptyView()
+                                    }
+                                    .frame(maxHeight: 50)
+                                }
+                            }
+                        },
+                        label: { self.selectedObject.selectedChapter?.hebrewBirthday != nil ?
+                            Text("Update Hebrow Birthday")
+                            .fontWeight(.semibold)
+                            .lineLimit(1)
+                            .padding(.leading, 0) :
+                            Text("Update Gregorian Birthday")
+                            .fontWeight(.semibold)
+                            .lineLimit(1)
+                            .padding(.leading, 4)
+                        }
+                    )
+                }
+                .padding(.leading, self.selectedObject.selectedChapter?.hebrewBirthday != nil ? 8 : 4)
+                .padding([.vertical, .trailing] , 8 )
+                
+                VStack(alignment: .leading, spacing: 8.0) {
+                    Text("Update Name of recored:")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                    TextField("Title", text: self.$title)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }.padding(.all, 8)
+                
             }
-        }
-        .previewLayout(.sizeThatFits)
+            
+            HStack(spacing: 20) {
+                Button(action: {
+                    withAnimation(.spring()){
+                        //  self.showOneRecored.toggle()
+                        self.closeView()
+                    }
+                }){
+                    Text("Close").padding(.vertical, 16).padding(.horizontal, 32)
+                }
+                .padding(.all, 6)
+                .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
+                
+                Button(action: {
+                    withAnimation(.spring()){
+                        
+                        self.saveChapterInDB(self.selectedObject.selectedChapter!)
+                        
+                    }
+                    
+                }){
+                    Text("Update").padding(.vertical, 16).padding(.horizontal, 32)
+                }
+                .padding(.all, 6)
+                .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
+            }
+            
+        }.frame(height: 360).background(Color("bg"))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding(.horizontal, 8)
     }
 }
-
 
 class SelectedChapterObject: ObservableObject
 {
@@ -398,27 +397,3 @@ class SelectedChapterObject: ObservableObject
     }
 }
 
-
-/*
- 
- //                    ScrollView {
- //
- //                        LazyVGrid(columns: columns, spacing: 20) {
- //
- //                            ForEach(chapters, id: \.self) { chapter in
- //                                HStack{
- //                                    Text(chapter.name!)
- //                                    Spacer()
- //                                    if chapter.isCounstChapter{
- //                                        Image(systemName: "heart.circle").imageScale(.large).font(.largeTitle)
- //                                    }else{
- //                                        Image(systemName: "calendar.circle")
- //                                    }
- //                                }
- //                                .padding(.vertical, 8)
- //                                .padding(.horizontal, 16)
- //                            }
- //                        }.environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
- //                    }.environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.spring())
- 
- */

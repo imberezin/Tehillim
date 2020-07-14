@@ -11,44 +11,41 @@ struct AboutUsView: View {
     
     var body: some View {
         
-//        NavigationView {
+        ZStack {
             
-            ZStack {
+            Color("bg").edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .center, spacing: 24.0) {
                 
-                Color("bg").edgesIgnoringSafeArea(.all)
+                Text("השימוש באפליקציה זו לזכות\nמשפחת ברזין ישראל ומירי")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
                 
-                VStack(alignment: .center, spacing: 24.0) {
-                    
-                    Text("השימוש באפליקציה זו לזכות\nמשפחת ברזין ישראל ומירי")
+                
+                HStack {
+                    Text("Thanks to:")
                         .font(.headline)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-
-                    
-                    HStack {
-                        Text("Thanks to:")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        Spacer()
-
-                    }
-                    Link(destination: URL(string: "https://www.sefaria.org.il")!, label: {
-                        Text("Sefaria")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                    })
                     Spacer()
-                  
-
+                    
                 }
-                .padding(.top, 24)
-                .padding(.horizontal, 24)
-
-                .navigationTitle("About Us")
-
+                Link(destination: URL(string: "https://www.sefaria.org.il")!, label: {
+                    Text("Sefaria")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                })
+                Spacer()
+                
+                
             }
-//        }
+            .padding(.top, 24)
+            .padding(.horizontal, 24)
+            
+            .navigationTitle("About Us")
+            
+        }
     }
 }
 

@@ -234,9 +234,10 @@ struct DailyStudyView: View {
     var body: some View {
         
         VStack {
+            
             ScrollView {
                 
-                LazyVGrid(columns: studyGridColumns, spacing: 15) {
+                LazyVGrid(columns: studyGridColumns, alignment: .center, spacing: 15) {
                     
                     ForEach(self.todayMV.todayLearnsVM.calendarItem, id: \.id) { item in
                         

@@ -102,7 +102,7 @@ struct DatePickerUIKit: UIViewRepresentable {
         
         datePicker.addTarget(context.coordinator, action: #selector(Coordinator.changed(_:)), for: .valueChanged)
         
-     //   datePicker.translatesAutoresizingMaskIntoConstraints = true
+        //   datePicker.translatesAutoresizingMaskIntoConstraints = true
         return datePicker
     }
     
@@ -212,7 +212,7 @@ struct CounstView: View {
             NSSortDescriptor(keyPath: \SaveChapter.index, ascending: true),
         ]
     ) var chapters: FetchedResults<SaveChapter>
-
+    
     var body: some View {
         
         VStack(alignment: .center, spacing: 15.0){
@@ -271,7 +271,7 @@ struct CounstView: View {
         for c in self.chapters{
             print("name = \(c.name ?? ""), index = \(c.index)")
         }
-
+        
         if !self.title.isEmpty{
             if !self.selectedChepter.isEmpty{
                 if let number = Int(self.selectedChepter), number > 0, number < 150 {
@@ -320,7 +320,7 @@ struct BirthdayView: View {
             NSSortDescriptor(keyPath: \SaveChapter.index, ascending: true),
         ]
     ) var chapters: FetchedResults<SaveChapter>
-
+    
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -357,13 +357,13 @@ struct BirthdayView: View {
                     },
                     label: { self.myType == .hebrow ?
                         Text("Select Hebrow Birthday")
-                            .fontWeight(.semibold)
-                            .lineLimit(1)
-                            .padding(.leading, 0) :
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                        .padding(.leading, 0) :
                         Text("Select Gregorian Birthday")
-                            .fontWeight(.semibold)
-                            .lineLimit(1)
-                            .padding(.leading, 4)
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                        .padding(.leading, 4)
                     }
                 )
             }.padding(.leading, self.myType == .hebrow ? 8 : 4)

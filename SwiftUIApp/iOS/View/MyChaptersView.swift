@@ -21,19 +21,19 @@ struct MyChaptersView: View {
     @State var showAddView: Bool = false
     
     @State var scrollToIndex: Int = 0
-
+    
     @State var showOneRecored: Bool = false
-
+    
     @State var isEditing = false
     
     @State var selectedChepter: String = ""
-
+    
     @State var title: String = ""
-
+    
     let columns: [GridItem] = [
-//        GridItem(.adaptive(minimum: 350))
+        //        GridItem(.adaptive(minimum: 350))
         GridItem(.flexible(minimum: 350, maximum: 700))
-
+        
     ]
     
     var dateFormatter: DateFormatter {
@@ -46,24 +46,24 @@ struct MyChaptersView: View {
     
     var body: some View {
         
-            VStack{
-                
-                ScrollView {
-                    ScrollViewReader { value in
-
+        VStack{
+            
+            ScrollView {
+                ScrollViewReader { value in
+                    
                     LazyVGrid(columns: columns, spacing: 20) {
                         
                         ForEach(Array(chapters.enumerated()), id: \.offset) { index, chapter in
-
-
+                            
+                            
                             VStack(spacing: 0){
-
+                                
                                 getChapter(to: chapter)
                                 
                             }
                             
                             .id(index)
-
+                            
                         }
                         
                         Button(action: {
@@ -73,7 +73,7 @@ struct MyChaptersView: View {
                         }
                         .padding(.all, 6)
                         .buttonStyle(BackgroundNeumorphicWhiteBlackStyle())
-
+                        
                     }.onAppear {
                         if self.scrollToIndex > 0 {
                             value.scrollTo(scrollToIndex)
@@ -82,31 +82,29 @@ struct MyChaptersView: View {
                     .padding()
                     
                 }
-                }
             }
-            .sheet(isPresented: self.$showAddView) {
-                AddChapterToMyChaptersView().environment(\.managedObjectContext, PersistentStore.shared.persistentContainer.viewContext)
-            }
-            
-            
-            .navigationBarTitle("My chapters", displayMode: .automatic)
-            .navigationBarItems(trailing: HStack {
-//                Button(action: {
-//                    print("edit")
-//                    //                self.isEditing.toggle()
-//                }){
-//                    Text("Edit")
-//                }
-                Button(action: {
-                    self.showAddView.toggle()
-                }){
-                    Text("Add")
-                }
-                
-        })
-            
+        }
+        .sheet(isPresented: self.$showAddView) {
+            AddChapterToMyChaptersView().environment(\.managedObjectContext, PersistentStore.shared.persistentContainer.viewContext)
+        }
         
-        //        }
+        
+        .navigationBarTitle("My chapters", displayMode: .automatic)
+        .navigationBarItems(trailing: HStack {
+            //                Button(action: {
+            //                    print("edit")
+            //                    //                self.isEditing.toggle()
+            //                }){
+            //                    Text("Edit")
+            //                }
+            Button(action: {
+                self.showAddView.toggle()
+            }){
+                Text("Add")
+            }
+            
+        })
+        
     }
     
     
@@ -130,7 +128,7 @@ struct MyChaptersView: View {
                 imageNumber = year
             }
         }
-
+        
         return
             VStack{
                 Image("t\(imageNumber)")
